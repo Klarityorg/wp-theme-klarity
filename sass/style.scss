@@ -1,0 +1,67 @@
+/*!
+Theme Name: jesuisanas
+Theme URI: https://jesuisanas.org/
+Author: Klarity team
+Author URI: https://klarity.org
+Description: A theme for the JeSuisAnas website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: jesuisanas
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+jesuisanas is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+
+/*--------------------------------------------------------------
+# Materialize
+--------------------------------------------------------------*/
+@import "../node_modules/materialize-css/sass/materialize";
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+@import "typography/typography";
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+@import "elements/elements";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# AddToAny plugin
+--------------------------------------------------------------*/
+@import "plugins/addtoany.scss";
+
+/*--------------------------------------------------------------
+# MailChimp plugin
+--------------------------------------------------------------*/
+@import "plugins/mailchimp";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "site/site";
+
+/*--------------------------------------------------------------
+# Parallax
+--------------------------------------------------------------*/
+@import "modules/parallax";
+
+
+/*--------------------------------------------------------------
+# full width layout
+--------------------------------------------------------------*/
+@import "layout/colorful-section";

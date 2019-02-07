@@ -1,0 +1,11 @@
+@import "../mixins/font-face";
+
+@include font-face(unna, Unna-Bold, bold, normal);
+
+@include font-face(unna, Unna-Regular, normal, normal);
+
+@include font-face(lato, Lato-Regular, normal, normal);
+
+@include font-face(lato, Lato-Light, 300, normal);
+
+@include font-face(Material Icons, MaterialIcons-Regular, normal, normal);
