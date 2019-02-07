@@ -1,0 +1,14 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+
+$block-width: 36px;
+$block-height: 24px;
+
+$block-width-medium-and-up: 64px;
+$block-height-medium-and-up: 48px;
+
+$block-padding: 16px;
+
+$max-width: 100%;
+$max-width-medium-and-up: #{8*$block-width-medium-and-up + 7*$block-padding};
+$max-width-extra-medium-and-up: #{10*$block-width-medium-and-up + 9*$block-padding};

@@ -1,0 +1,40 @@
+.footer.page-footer {
+  margin: 0;
+  color: $color__text-menu;
+}
+
+.page-footer .widget-title {
+  color: white;
+}
+
+.page-footer .widget-list a {
+  color: white;
+}
+
+.widget_search .screen-reader-text {
+	display:none;
+}
+
+.widget_search .search-submit {
+  content: '<i class="material-icons right">send</i>'
+}
+
+.input-field input[type=search] {
+  border-bottom-color: white;
+}
+
+
+.footer-copyright {
+  background-color: $color__background-footer !important;
+  color: white;
+}
+
+.power-link a{
+  background-color: $color__background-footer !important;
+  color: white;
+  text-align: right;
+}
+
+.power-link {
+  text-align: right;
+}

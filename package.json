@@ -1,0 +1,11 @@
+{
+  "name": "klarity",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node_modules/node-sass/bin/node-sass sass -o . --output-style=compressed"
+  },
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "materialize-css": "^1.0.0"
+  }
+}

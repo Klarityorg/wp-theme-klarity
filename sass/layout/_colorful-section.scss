@@ -1,0 +1,39 @@
+.section-primary {
+  background-color: $primary-color !important;
+
+  &, * {
+    color: $primary-color-text;
+  }
+}
+
+.section-secondary {
+  background-color: $secondary-color !important;
+
+  &, * {
+    color: $secondary-color-text;
+  }
+}
+
+.section-tertiary {
+  background-color: $tertiary-color !important;
+
+  &, * {
+    color: $tertiary-color-text;
+  }
+}
+
+.section-white {
+  background-color: white !important;
+
+  &, * {
+    color: black;
+  }
+}
+
+.section-transparent {
+  background-color: transparent !important;
+
+  &, * {
+    color: black;
+  }
+}

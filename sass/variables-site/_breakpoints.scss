@@ -1,0 +1,22 @@
+$extra-small-screen: 320px !default;
+$small-screen: 600px !default;
+$medium-screen: 960px !default;
+
+$extra-small-screen-up: 321px !default;
+$small-screen-up: 601px !default;
+$medium-screen-up: 961px !default;
+
+// The following are adapting materializecss rules to our own extra-small breakpoint
+
+$extra-small-and-down: "only screen and (max-width : #{$extra-small-screen})" !default;
+
+.hide-on-extra-small-only, .hide-on-extra-small-and-down {
+  @media #{$extra-small-and-down} {
+    display: none !important;
+  }
+}
+.show-on-extra-small {
+  @media #{$extra-small-and-down} {
+    display: block !important;
+  }
+}

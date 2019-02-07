@@ -1,0 +1,23 @@
+.navbar-fixed, nav {
+	a {
+		font-family: lato, sans-serif;
+		font-weight: bold;
+		font-size: 14px;
+		color: $color__text-menu;
+		letter-spacing: 1.1px;
+		text-transform: uppercase;
+	}
+}
+
+.sub-menu li {
+	background-color: $primary-color;
+}
+
+.custom-logo-link {
+    display: inline-block;
+    height: 100%;
+}
+
+.custom-logo-link>img {
+    vertical-align: middle
+}

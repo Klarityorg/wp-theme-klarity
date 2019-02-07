@@ -1,0 +1,75 @@
+/*!
+Theme Name: klarity
+Theme URI: https://klarity.org/
+Author: Klarity team
+Author URI: https://klarity.org
+Description: A theme for the JeSuisAnas website
+Version: 1.0.0
+License: MIT
+License URI: LICENSE
+Text Domain: klarity
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+klarity is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+// Hardcode Materialize's default breakpoints since we don't want to import all of Materialize in the editor
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+.edit-post-layout__content {
+  @import "variables-site/variables-site";
+  @import "mixins/mixins-master";
+
+  /*--------------------------------------------------------------
+  # Colorful sections
+  --------------------------------------------------------------*/
+  @import "layout/colorful-section";
+
+  /*--------------------------------------------------------------
+  # Typography
+  --------------------------------------------------------------*/
+  @import "typography/typography";
+
+  /*--------------------------------------------------------------
+  # Links
+  --------------------------------------------------------------*/
+  @import "navigation/links";
+
+  /*--------------------------------------------------------------
+  # AddToAny plugin
+  --------------------------------------------------------------*/
+  @import "plugins/addtoany";
+
+  /*--------------------------------------------------------------
+  # MailChimp plugin
+  --------------------------------------------------------------*/
+  @import "plugins/mailchimp";
+
+  select, button, .editor-block-mover * {
+    color: black !important;
+  }
+
+  textarea, input {
+    background: transparent !important;
+    text-align: inherit;
+
+    &:focus {
+      color: inherit;
+    }
+  }
+}
