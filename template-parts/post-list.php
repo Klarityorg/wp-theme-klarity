@@ -24,7 +24,7 @@
             klarity_posted_by();
             ?>
         </div>
-        <h3 class="header left-align" style="margin: 0px;"> <?php the_title( ) ?></h3>
+        <h3 class="header left-align"> <?php the_title( ) ?></h3>
         <?php
         	if ( 'post' === get_post_type() ) :
                 ?>

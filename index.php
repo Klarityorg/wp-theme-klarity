@@ -28,6 +28,9 @@ get_header();
 				<?php
 			endif;
 
+			?>
+			<div class="container">
+			<?php	
 			/* Start the Loop */
 			while ( have_posts() ) :
 				
@@ -43,7 +46,9 @@ get_header();
 			endwhile;
 
 			the_posts_navigation();
-
+			?>
+			</div>
+			<?php
 
 		else :
 
