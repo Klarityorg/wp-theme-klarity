@@ -23,7 +23,7 @@ msgid "https://klarity.org/"
 msgstr ""
 
 #. Description of the theme
-msgid "A theme for the JeSuisAnas website"
+msgid "Klarity’s theme is designed to display videos and investigations of corruption and add targeted call-to-actions for the website visitors to mobilise citizen engagement. It’s built with modern tools and various options which allows visitors of the website to take action on displayed cases. e.g. Sign a petition, Engage in email and Whatsapp campaigns, and Whistleblow anonymously. Klarity’s theme could be used by investigate journalist networks and advocacy groups who want to grow their online presence and engage online users in creating awareness and taking action on their content. To see the theme utilised to its full potential visit the jesuisanas.org."
 msgstr ""
 
 #. Author of the theme
