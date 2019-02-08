@@ -62,7 +62,7 @@ if ( ! function_exists( 'klarity_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'klarity' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'klarity' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( ' in %1$s', 'klarity' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */

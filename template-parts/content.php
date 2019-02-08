@@ -20,16 +20,15 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta">
+			<div class="entry-meta" style="text-align: center">
 				<?php
 				klarity_posted_on();
+				klarity_entry_footer();
 				klarity_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-
-	<?php klarity_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -52,10 +51,6 @@
 		) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php klarity_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 
 
