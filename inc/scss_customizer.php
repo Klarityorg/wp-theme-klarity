@@ -71,3 +71,16 @@ function prefix_customizer_register() {
     }
 }
 add_action('customize_register', 'prefix_customizer_register');
+
+
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+function wpdocs_excerpt_more( $more ) {
+    return '... <a href="' . esc_url( get_permalink() ) . '">read more</a>';
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+    
