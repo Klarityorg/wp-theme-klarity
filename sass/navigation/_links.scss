@@ -1,5 +1,6 @@
 :not(.menu) > :not(li) > a:not(.sidenav-trigger) {
   color: $color__link !important;
+  text-decoration: underline;
 
   &:visited {
     color: $color__link-visited;
