@@ -60,7 +60,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   --------------------------------------------------------------*/
   @import "plugins/mailchimp";
 
-  select, button, .editor-block-mover * {
+  select, button, .editor-inserter *, .editor-block-mover * {
     color: black !important;
   }
 
@@ -72,7 +72,27 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
     }
 
     &:focus {
-      color: inherit;
+      color: inherit !important;
+    }
+  }
+
+  .editor-block-list__layout {
+    .editor-block-list__block {
+      .editor-block-list__block-edit {
+        padding-left: 1px;
+
+        &:before {
+          outline: 1px solid #EFF1F3;
+        }
+      }
+
+      &.is-selected {
+        .editor-block-list__block-edit {
+          &:before {
+            outline-color: #DDD !important;
+          }
+        }
+      }
     }
   }
 }
