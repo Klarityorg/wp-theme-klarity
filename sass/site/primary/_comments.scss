@@ -8,13 +8,73 @@
 
     li {
       font-family: lato, sans-serif;
+      font-weight: 300;
       padding: 15px 20px;
       list-style: none;
 
       .comment-author,
       .comment-time,
       p {
-        font-weight: 300;
+        line-height: 24px;
+        font-size: 14px;
+
+        @media #{$medium-and-up} {
+          line-height: 16px;
+          font-size: 16px;
+        }
+
+        &.comment-author {
+          color: $primary-color;
+        }
+
+        &.comment-time {
+          text-align: right;
+        }
+      }
+
+      .comment-intro {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .reply {
+        &:not(:last-child)   {
+          margin-bottom: 10px;
+        }
+
+        a {
+          font-style: italic;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .children {
+      border-top: 0.3px solid #ddd;
+      padding-left: 20px;
+
+      @media #{$medium-and-up} {
+        padding-left: 30px;
+      }
+
+      li {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .comment-respond {
+    .comment-reply-title {
+      display: none;
+    }
+
+    .comment-form {
+      p {
+        line-height: inherit;
+      }
+
+      label {
+        color: $primary-color;
         line-height: 24px;
         font-size: 14px;
 
@@ -24,20 +84,21 @@
         }
       }
 
-      .comment-intro {
-        display: flex;
-        justify-content: space-between;
+      .comment-form-url {
+        display: none;
       }
-    }
 
-    .children li {
-      padding-right: 0;
-    }
-  }
+      .form-submit {
+        text-align: center;
 
-  .comment-respond {
-    .comment-reply-title {
-      display: none;
+        .submit {
+          background: $secondary-color;
+          width: inherit;
+          height: inherit;
+          line-height: 18px;
+          padding: 14px 24px;
+        }
+      }
     }
   }
 }

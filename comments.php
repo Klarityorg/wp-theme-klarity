@@ -21,8 +21,7 @@ function format_comment($comment, $args, $depth) {
     <li class="<?=implode(' ', [$depth === 1 ? 'card' :  ''] + get_comment_class())?>" id="li-comment-<?php comment_ID() ?>">
 
         <div class="comment-intro">
-            <div class="comment-author">
-                <?php printf(__('%s'), get_comment_author_url_link(get_comment_author_link())) ?>
+            <div class="comment-author"><?=$comment->comment_author?>
             </div>
             <div class="comment-time">
                 <?php printf(_x('%s ago', '%s = human-readable time difference', 'your-text-domain'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
@@ -84,7 +83,9 @@ if ( post_password_required() ) {
             endif; // Check for have_comments().
 
             comment_form([
+                'label_submit' => __('Comment'),
                 'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
+                'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>'
             ]);
             ?>
 
