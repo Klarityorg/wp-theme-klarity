@@ -35,6 +35,21 @@ textarea {
   font-feature-settings: 'liga';
 }
 
+.shade {
+  color: #979797 !important;
+  font-family: lato, sans-serif;
+  line-height: 16px;
+  font-size: 12px;
+
+}
+
+.shade a {
+  color: #979797 !important;
+  font-family: lato, sans-serif;
+  line-height: 16px;
+  font-size: 12px;
+}
+
 @import "headings";
 
 @import "copy";
