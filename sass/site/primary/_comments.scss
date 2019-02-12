@@ -1,4 +1,10 @@
+.comments-link {
+  display: none;
+}
+
 .comments-area {
+  padding-top: 0;
+
   .comments-title {
     text-align: center;
   }
@@ -12,16 +18,15 @@
       padding: 15px 20px;
       list-style: none;
 
+      &.card {
+        box-shadow: 0 4px 11px rgba(0, 0, 0, 0.15);
+      }
+
       .comment-author,
       .comment-time,
       p {
         line-height: 24px;
         font-size: 14px;
-
-        @media #{$medium-and-up} {
-          line-height: 16px;
-          font-size: 16px;
-        }
 
         &.comment-author {
           color: $primary-color;
