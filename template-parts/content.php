@@ -20,7 +20,7 @@
 
 		if ( 'post' === get_post_type() ) :
 			?>
-			<div class="entry-meta" style="text-align: center">
+			<div class="entry-meta shade" style="text-align: center">
 				<?php
 				klarity_posted_on();
 				klarity_entry_footer();

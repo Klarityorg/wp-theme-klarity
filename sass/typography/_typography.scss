@@ -41,14 +41,12 @@ textarea {
   line-height: 16px;
   font-size: 12px;
 
+  &, a {
+    color: #979797 !important;
+ }
+
 }
 
-.shade a {
-  color: #979797 !important;
-  font-family: lato, sans-serif;
-  line-height: 16px;
-  font-size: 12px;
-}
 
 @import "headings";
 

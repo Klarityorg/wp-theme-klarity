@@ -10,10 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 <div class="col s12" style="margin-top: 24px;">
-   <div class="card horizontal">
-
+<div class="card horizontal" onclick="window.location.href = '<?= esc_url( get_permalink() )?>'">
       <div class="card-stacked">
         <div class="card-content">
             <?php
