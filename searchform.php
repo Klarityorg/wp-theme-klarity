@@ -8,7 +8,7 @@
  */
 
 ?>
-<form>
+<form action="/">
     <div class="input-field">
         <i class="material-icons prefix">search</i>
         <input id="s" type="search" required name="s">
