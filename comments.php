@@ -10,6 +10,36 @@
  * @package klarity
  */
 
+/**
+ * @param string $comment
+ * @param array $args
+ * @param integer $depth
+ */
+function format_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment; ?>
+
+    <li class="<?=implode(' ', [$depth === 1 ? 'card' :  ''] + get_comment_class())?>" id="li-comment-<?php comment_ID() ?>">
+
+        <div class="comment-intro">
+            <div class="comment-author">
+                <?php printf(__('%s'), get_comment_author_url_link(get_comment_author_link())) ?>
+            </div>
+            <div class="comment-time">
+                <?php printf(_x('%s ago', '%s = human-readable time difference', 'your-text-domain'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
+            </div>
+        </div>
+
+        <?php if ($comment->comment_approved === '0') { ?>
+            <em><?php _e('Your comment is awaiting moderation.') ?></em><br/>
+        <?php } ?>
+
+        <?php comment_text(); ?>
+
+        <div class="reply">
+            <?php comment_reply_link(array_merge($args, ['depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
+        </div>
+
+    <?php }
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -17,64 +47,47 @@
  */
 if ( post_password_required() ) {
 	return;
-}
-?>
-<div class="container">
-	<div class="row">
-		<div class="col s12">
-			<div id="comments" class="comments-area">
+} ?>
+<article>
+	<div class="entry-content">
+        <div id="comments" class="comments-area">
 
-				<?php
-				// You can start editing here -- including this comment!
-				if ( have_comments() ) :
-					?>
-					<h2 class="comments-title">
-						<?php
-						$klarity_comment_count = get_comments_number();
-						if ( '1' === $klarity_comment_count ) {
-							printf(
-								/* translators: 1: title. */
-								esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'klarity' ),
-								'<span>' . get_the_title() . '</span>'
-							);
-						} else {
-							printf( // WPCS: XSS OK.
-								/* translators: 1: comment count number, 2: title. */
-								esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $klarity_comment_count, 'comments title', 'klarity' ) ),
-								number_format_i18n( $klarity_comment_count ),
-								'<span>' . get_the_title() . '</span>'
-							);
-						}
-						?>
-					</h2><!-- .comments-title -->
+            <?php
+            // You can start editing here -- including this comment!
+            if ( have_comments() ) :
+                ?>
+                <h2 class="comments-title">
+                    <?=__('Share your thoughts')?>
+                </h2>
 
-					<?php the_comments_navigation(); ?>
+                <?php the_comments_navigation(); ?>
 
-					<ol class="comment-list">
-						<?php
-						wp_list_comments( array(
-							'style'      => 'ol',
-							'short_ping' => true,
-						) );
-						?>
-					</ol><!-- .comment-list -->
+                <ol class="comment-list">
+                    <?php
+                    wp_list_comments( array(
+                        'callback' => 'format_comment',
+                        'style'      => 'ol',
+                        'short_ping' => true,
+                    ) );
+                    ?>
+                </ol><!-- .comment-list -->
 
-					<?php
-					the_comments_navigation();
+                <?php
+                the_comments_navigation();
 
-					// If comments are closed and there are comments, let's leave a little note, shall we?
-					if ( ! comments_open() ) :
-						?>
-						<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'klarity' ); ?></p>
-						<?php
-					endif;
+                if ( ! comments_open() ) :
+                    ?>
+                    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'klarity' ); ?></p>
+                    <?php
+                endif;
 
-				endif; // Check for have_comments().
+            endif; // Check for have_comments().
 
-				comment_form();
-				?>
+            comment_form([
+                'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
+            ]);
+            ?>
 
-			</div><!-- #comments -->
-		</div>
+        </div><!-- #comments -->
 	</div>
-</div>
+</article>
