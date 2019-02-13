@@ -10,33 +10,27 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="col s12" style="margin-top: 24px;">
-<div class="card horizontal" onclick="window.location.href = '<?= esc_url( get_permalink() )?>'">
-      <div class="card-stacked">
-        <div class="card-content">
-            <?php
-
-              if ( 'post' === get_post_type() ) :
-                ?>
-                  <div class="entry-meta left-align hide-on-med-and-down shade">
-                  <?php
-                    klarity_posted_on();
-                    klarity_posted_by();
-                  ?>
-                </div><!-- .entry-meta -->
-            <?php endif; ?>
-        <h3 class="header left-align" style="margin-top: 0px; margin-bottom: 0px;"> <?php the_title( ) ?></h3>
-        <?php
-        	if ( 'post' === get_post_type() ) :
-                ?>
-             
-                <?php 
-                endif; 
-                the_excerpt()
-        
-		?>
+  <?php
+    $content = wp_trim_words($post->post_content, $num_words = 100 );
+    $formated_date = get_the_date( 'j F Y', $post);
+    preg_match('/videoThumbnail":"(.+)"/', $post->post_content, $matches);
+    $image = $matches[1] ?? wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0] ?? '';
+    if($image === '') $imageTag = ''; else $imageTag = '<img src="'.$image.'"/>';
+ ?>
+ <div class="post-container">
+    <a href="<?php echo get_permalink($post) ?>">
+      <div class="post">
+        <div class="post-thumbnail">
+          <?php echo $imageTag ?>
+        </div>
+        <div class="post-content">
+          <div class="left-align">
+            <p class="meta-data">Created <?php echo $formated_date ?> - <?php echo get_the_author_meta('display_name',$post->post_author) ?></p>
+          </div>
+          <h3 class="left-align"><?php echo $post->post_title ?></h3>
+          <p><?php echo $content?></p>
         </div>
       </div>
-    </div>
+    </a>
   </div>
 </article><!-- #post-<?php the_ID(); ?> -->
