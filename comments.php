@@ -18,7 +18,7 @@
 function format_comment($comment, $args, $depth) {
     $GLOBALS['comment'] = $comment; ?>
 
-    <li class="<?=implode(' ', [$depth === 1 ? 'card' :  ''] + get_comment_class())?>" id="li-comment-<?php comment_ID() ?>">
+    <li class="<?=implode(' ', [$depth === 1 ? 'card' :  ''] + get_comment_class())?>" id="comment-<?php comment_ID() ?>">
 
         <div class="comment-intro">
             <div class="comment-author"><?=$comment->comment_author?>
