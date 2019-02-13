@@ -60,5 +60,8 @@
     border-radius: 0;
     min-width: 0;
     text-align: center !important;
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
   }
 }

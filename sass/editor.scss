@@ -62,12 +62,6 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 
   select, button, .editor-inserter *, .editor-block-mover *, .block-library-classic__toolbar * {
     color: black !important;
-
-    svg {
-      &:hover {
-        fill: black !important;
-      }
-    }
   }
 
   textarea, input {
