@@ -73,7 +73,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   textarea, input {
     text-align: inherit;
 
-    &:not([type="checkbox"]) {
+    &:not([type="checkbox"])&:not([type="radio"]) {
       background: transparent !important;
     }
 
