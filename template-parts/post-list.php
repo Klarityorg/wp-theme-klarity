@@ -17,7 +17,7 @@
     $image = $matches[1] ?? wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'single-post-thumbnail')[0] ?? '';
     if($image === '') $imageTag = ''; else $imageTag = '<img src="'.$image.'"/>';
  ?>
- <div class="post-container">
+ <div class="post-list-container">
     <a href="<?php echo get_permalink($post) ?>">
       <div class="post">
         <div class="post-thumbnail">
