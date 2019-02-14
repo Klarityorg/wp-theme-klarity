@@ -1,11 +1,15 @@
-// These first colors are overridden by theme customizer, see inc/scss_customizer.php
+// These colors are overridden by the theme customizer
+// If the default colors hereunder need to be changed, they should be changed both here and in inc/scss_customizer.php
 $primary-color: #F8000B !default;
 $secondary-color: #32323C !default;
 $tertiary-color: #EFF1F3 !default;
 $primary-color-text: #FFFFFF !default;
 $secondary-color-text: #FFFFFF !default;
 $tertiary-color-text: #000000 !default;
+
+// If the default colors hereunder need to be changed, they should be changed both here and in functions.php (it's called default-color there)
 $color__background-body: #FFFCFC !default;
+
 
 $color__background-nav: $primary-color;
 $color__background-footer: $primary-color;

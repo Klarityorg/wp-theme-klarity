@@ -45,9 +45,9 @@ function prefix_set_variables() {
     foreach ($default_variables as $key => $value) {
         $variables[$key] = get_theme_mod($key, $value);
     }
-    $variables['color__background-body'] = get_theme_mod('background_color', '#FFFCFC');
+    $variables['color__background-body'] = get_theme_mod('background_color');
     if (preg_match('~#?(.+)$~', $variables['color__background-body'], $match)) {
-      $variables['color__background-body'] = strtoupper("#{$match[1]}");
+      $variables['color__background-body'] = "#{$match[1]}";
     }
     return $variables;
 }
