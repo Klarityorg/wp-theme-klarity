@@ -37,7 +37,7 @@
     </div><?php
   } ?>
   <div class="entry-content"><?php
-    $post_content = get_the_content(
+    the_content(
       sprintf(
         wp_kses(
         /* translators: %s: Name of current post. Only visible to screen readers */
@@ -53,14 +53,11 @@
     ]);
     // If comments are open or we have at least one comment, load up the comment template.
     if (comments_open() || get_comments_number()) :
-      ob_start();
       comments_template();
-      $post_content .= ob_get_clean();
     endif;
     if (function_exists('A2A_SHARE_SAVE_add_to_content')) {
-      $post_content = A2A_SHARE_SAVE_add_to_content($post_content);
-    }
-    echo $post_content; ?>
+      echo A2A_SHARE_SAVE_add_to_content('');
+    } ?>
   </div><!-- .entry-content -->
   <footer class="entry-footer">
     <?php klarity_entry_footer(); ?>
