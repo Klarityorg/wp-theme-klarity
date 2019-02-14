@@ -29,11 +29,11 @@ get_header();
 			endif;
 
 			?>
-			<div class="container">
-			<?php	
+			<div class="entry-content">
+			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
-				
+
 				the_post();
 
 				/*

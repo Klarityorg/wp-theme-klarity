@@ -15,7 +15,7 @@
   ?>
     <div id="index-banner" class="parallax-container">
       <div class="section no-pad-bot valign-wrapper">
-        <div class="container">
+        <div class="entry-content">
           <header class="entry-header">
             <?php
             if ( is_singular() ) :
