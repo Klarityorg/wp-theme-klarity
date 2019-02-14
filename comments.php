@@ -53,9 +53,9 @@ if ( post_password_required() ) {
     // You can start editing here -- including this comment!
     if ( have_comments() ) :
         ?>
-        <h2 class="comments-title">
+        <h4 class="comments-title">
             <?=__('Share your thoughts')?>
-        </h2>
+        </h4>
 
         <?php the_comments_navigation(); ?>
 
