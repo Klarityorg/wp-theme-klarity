@@ -45,6 +45,10 @@ function prefix_set_variables() {
     foreach ($default_variables as $key => $value) {
         $variables[$key] = get_theme_mod($key, $value);
     }
+    $variables['color__background-body'] = get_theme_mod('background_color', '#FFFCFC');
+    if (preg_match('~#?(.+)$~', $variables['color__background-body'], $match)) {
+      $variables['color__background-body'] = strtoupper("#{$match[1]}");
+    }
     return $variables;
 }
 add_filter('wp_scss_variables', 'prefix_set_variables');
@@ -83,4 +87,3 @@ function wpdocs_excerpt_more( $more ) {
     return '... <a href="' . esc_url( get_permalink() ) . '">read more</a>';
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
-    
