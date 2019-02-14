@@ -174,6 +174,13 @@ function add_theme_scripts() {
     wp_enqueue_style('klarity-style', get_template_directory_uri() . '/editor.css', [], time());
 }
 add_action('enqueue_block_editor_assets', 'add_theme_scripts');
+
+// Remove AddToAny this we add it ourselves later
+function addtoany_remove() {
+    remove_filter( 'the_content', 'A2A_SHARE_SAVE_add_to_content', 98 );
+}
+add_action( 'pre_get_posts', 'addtoany_remove');
+
 /**
  * Implement the Custom Header feature.
  */

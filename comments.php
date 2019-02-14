@@ -47,48 +47,44 @@ function format_comment($comment, $args, $depth) {
 if ( post_password_required() ) {
 	return;
 } ?>
-<article>
-	<div class="entry-content">
-        <div id="comments" class="comments-area">
+<div id="comments" class="comments-area">
 
+    <?php
+    // You can start editing here -- including this comment!
+    if ( have_comments() ) :
+        ?>
+        <h2 class="comments-title">
+            <?=__('Share your thoughts')?>
+        </h2>
+
+        <?php the_comments_navigation(); ?>
+
+        <ol class="comment-list">
             <?php
-            // You can start editing here -- including this comment!
-            if ( have_comments() ) :
-                ?>
-                <h2 class="comments-title">
-                    <?=__('Share your thoughts')?>
-                </h2>
-
-                <?php the_comments_navigation(); ?>
-
-                <ol class="comment-list">
-                    <?php
-                    wp_list_comments( array(
-                        'callback' => 'format_comment',
-                        'style'      => 'ol',
-                        'short_ping' => true,
-                    ) );
-                    ?>
-                </ol><!-- .comment-list -->
-
-                <?php
-                the_comments_navigation();
-
-                if ( ! comments_open() ) :
-                    ?>
-                    <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'klarity' ); ?></p>
-                    <?php
-                endif;
-
-            endif; // Check for have_comments().
-
-            comment_form([
-                'label_submit' => __('Comment'),
-                'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
-                'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>'
-            ]);
+            wp_list_comments( array(
+                'callback' => 'format_comment',
+                'style'      => 'ol',
+                'short_ping' => true,
+            ) );
             ?>
+        </ol><!-- .comment-list -->
 
-        </div><!-- #comments -->
-	</div>
-</article>
+        <?php
+        the_comments_navigation();
+
+        if ( ! comments_open() ) :
+            ?>
+            <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'klarity' ); ?></p>
+            <?php
+        endif;
+
+    endif; // Check for have_comments().
+
+    comment_form([
+        'label_submit' => __('Comment'),
+        'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
+        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>'
+    ]);
+    ?>
+
+</div><!-- #comments -->
