@@ -20,4 +20,12 @@
       margin-bottom: #{$block-height-medium-and-up/2};
     }
   }
+
+  img {
+    height: 40px;
+
+    @media #{$medium-and-up} {
+      height: 56px;
+    }
+  }
 }
