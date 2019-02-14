@@ -1,13 +1,6 @@
 .parallax-container {
-  @media #{$large-and-up} {
-    min-height: 600px;
-  }
-  @media #{$medium-and-down} {
-    min-height: 450px;
-  }
-  @media #{$small-and-down} {
-    min-height: 300px;
-  }
+  padding-top: 0 !important;
+  min-height: initial;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
