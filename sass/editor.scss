@@ -60,7 +60,11 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   --------------------------------------------------------------*/
   @import "plugins/mailchimp";
 
-  select, button, .editor-inserter *, .editor-block-mover *, .block-library-classic__toolbar * {
+  select, button,
+  .editor-inserter *,
+  .editor-block-mover *,
+  .editor-block-contextual-toolbar *,
+  .block-library-classic__toolbar * {
     color: black !important;
   }
 
