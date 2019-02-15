@@ -1,4 +1,4 @@
-:not(.menu) > :not(li) > a:not(.sidenav-trigger) {
+:not(.menu) > :not(li) > a:not(.sidenav-trigger) > a:not(.power-link) {
   color: $color__link !important;
   text-decoration: underline;
 
