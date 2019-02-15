@@ -24,7 +24,7 @@ function format_comment($comment, $args, $depth) {
             <div class="comment-author"><?=$comment->comment_author?>
             </div>
             <div class="comment-time">
-                <?php printf(_x('%s ago', '%s = human-readable time difference', 'your-text-domain'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
+                <?php printf(_x('%s ago', '%s = human-readable time difference', 'klarity'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
             </div>
         </div>
 
