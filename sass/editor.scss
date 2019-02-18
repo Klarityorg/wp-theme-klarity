@@ -99,4 +99,36 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
       }
     }
   }
+
+  .msg {
+    font-size: small;
+    width: 100%;
+    border: 1px solid;
+    margin-top: 10px;
+    padding: 10px;
+    line-height: 10px;
+    color: grey;
+
+    &.msg-error {
+      border-color: #d32f2f;
+      background-color: #ef5350;
+      color: white;
+    }
+
+    &.msg-alert {
+      border-color: #ef6c00;
+      background-color: #f8be55;
+      color: black;
+    }
+
+    &.msg-info {
+      border-color: #0288d1;
+      background-color: #29b6f6;
+      color: white;
+    }
+
+    pre {
+      display: inline-block;
+    }
+  }
 }
