@@ -9,6 +9,12 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div class="container breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if(function_exists('bcn_display'))
+      {
+          bcn_display();
+      }?>
+  </div>
   <?php
   if (has_post_thumbnail()) { ?>
     <div id="index-banner" class="parallax-container">
