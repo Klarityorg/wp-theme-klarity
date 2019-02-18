@@ -10,9 +10,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="container breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-    <?php if(function_exists('bcn_display'))
+    <?php if(!is_front_page() && function_exists('bcn_display'))
       {
-          bcn_display();
+        bcn_display();
       }?>
   </div>
   <?php
