@@ -17,6 +17,12 @@ get_header();
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
+    <div class="container breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+      <?php if(!is_front_page() && function_exists('bcn_display'))
+        {
+          bcn_display();
+        }?>
+    </div>
 		<?php
 		if ( have_posts() ) :
 
