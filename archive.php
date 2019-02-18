@@ -30,7 +30,6 @@ get_header();
 			/* Start the Loop */
 			while ( have_posts() ) :
 				?>
-				<div class="row">
 					<?php
 					the_post();
 					/*
@@ -40,7 +39,6 @@ get_header();
 					*/
 					get_template_part( 'template-parts/post-list', get_post_type() );
 					?>
-				</div>
 						<?php
 
 			endwhile;
