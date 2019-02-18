@@ -29,6 +29,9 @@
           </div>
           <h3 class="left-align"><?php echo $post->post_title ?></h3>
           <p><?php echo $content?></p>
+          <div class="action">
+            <p>Read more</p>
+          </div>
         </div>
       </div>
     </a>
