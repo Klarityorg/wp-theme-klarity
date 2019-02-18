@@ -43,7 +43,12 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 /*--------------------------------------------------------------
 # AddToAny plugin
 --------------------------------------------------------------*/
-@import "plugins/addtoany.scss";
+@import "plugins/addtoany";
+
+/*--------------------------------------------------------------
+# Breadcrumb plugin
+--------------------------------------------------------------*/
+@import "plugins/breadcrumb-navxt";
 
 /*--------------------------------------------------------------
 # MailChimp plugin
