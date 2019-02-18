@@ -1,4 +1,4 @@
-h1, h2, h3, h4, h5 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5 {
 	clear: both;
 	text-align: center;
 	margin-bottom: #{$block-height/2};
@@ -8,12 +8,12 @@ h1, h2, h3, h4, h5 {
 	}
 }
 
-h1, h2, h3 {
+h1, .h1, h2, .h2, h3, .h3 {
 	font-family: unna, sans-serif;
 	font-weight: bold;
 }
 
-h1 {
+h1, .h1 {
 	line-height: 60px;
 	font-size: 48px;
 
@@ -23,7 +23,7 @@ h1 {
 	}
 }
 
-h2 {
+h2, .h2 {
 	line-height: 50px;
 	font-size: 40px;
 
@@ -33,7 +33,7 @@ h2 {
 	}
 }
 
-h3 {
+h3, .h3 {
 	line-height: 40px;
 	font-size: 32px;
 	margin: 20px 0;
@@ -44,7 +44,7 @@ h3 {
 	}
 }
 
-h4 {
+h4, .h5 {
 	font-family: unna, sans-serif;
 	font-weight: normal;
 	line-height: 32px;
@@ -57,7 +57,7 @@ h4 {
 	}
 }
 
-h5 {
+h5, .h5 {
 	font-family: lato, sans-serif;
 	font-weight: 300;
 	line-height: 20px;
