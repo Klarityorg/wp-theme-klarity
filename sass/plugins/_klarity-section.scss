@@ -4,6 +4,10 @@
   &, * {
     color: $primary-color-text;
   }
+  .btn {
+	   background-color: $secondary-color;
+	   color: $secondary-color-text;
+  }
 }
 
 .section-secondary {
@@ -11,6 +15,10 @@
 
   &, * {
     color: $secondary-color-text;
+  }
+  .btn {
+	   background-color: $primary-color;
+	   color: $primary-color-text;
   }
 }
 
@@ -20,6 +28,10 @@
   &, * {
     color: $tertiary-color-text;
   }
+  .btn {
+	   background-color: $primary-color;
+	   color: $primary-color-text;
+  }
 }
 
 .section-default {
@@ -27,5 +39,9 @@
 
   &, * {
     color: black;
+  }
+  .btn {
+	   background-color: $secondary-color;
+	   color: $secondary-color-text;
   }
 }
