@@ -93,7 +93,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
       &.is-selected {
         .editor-block-list__block-edit {
           &:before {
-            outline-color: #DDD !important;
+            outline-color: black !important;
           }
         }
       }
