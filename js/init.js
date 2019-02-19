@@ -7,7 +7,10 @@
     $('#commentform').removeAttr('novalidate');
 
     // Scroll to anchor if it exists
-    $('html, body').prop({scrollTop:$(':target').offset().top - $('.navbar-fixed').height()});
+    let anchor = $(':target');
+    if (anchor.length) {
+      $('html, body').prop({scrollTop: anchor.offset().top - $('.navbar-fixed').height()});
+    }
 
   });
 })(jQuery);
