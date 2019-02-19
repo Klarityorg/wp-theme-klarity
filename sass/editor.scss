@@ -87,7 +87,7 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
   .editor-block-list__layout {
     .editor-block-list__block {
       .editor-block-list__block-edit {
-        padding-left: 1px;
+        padding: 5px;
 
         &:before {
           outline: 1px solid #EFF1F3;
