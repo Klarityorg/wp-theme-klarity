@@ -73,6 +73,10 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 
     &:not([type="checkbox"]):not([type="radio"]) {
       background: transparent !important;
+
+      &.editor-plain-text {
+        background: rgba(255,255,255,0.5) !important;
+      }
     }
 
     &:focus {
