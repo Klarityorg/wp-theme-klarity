@@ -21,6 +21,15 @@
 
 .input-field input[type=search] {
   border-bottom-color: white;
+  border-radius: 0;
+  padding: 0px 16px;
+
+  & ~ .material-icons {
+    top: 0;
+    align-items: center;
+    display: flex;
+    bottom: 0;
+  }
 }
 
 .footer-copyright {
