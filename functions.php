@@ -83,58 +83,56 @@ if ( ! function_exists( 'klarity_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'klarity_setup' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function klarity_content_width() {
-	// This variable is intended to be overruled from themes.
-	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
-	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'klarity_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'klarity_content_width', 0 );
+add_action('after_setup_theme',
+  /**
+   * Set the content width in pixels, based on the theme's design and stylesheet.
+   * Priority 0 to make it available to lower priority callbacks.
+   * @global int $content_width
+   */
+  function () {
+    // This variable is intended to be overruled from themes.
+    // Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+    // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+    $GLOBALS['content_width'] = apply_filters( 'klarity_content_width', 640 );
+  }, 0
+);
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function klarity_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Left', 'klarity' ),
-		'id'            => 'first-footer-widget-area',
-		'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Center', 'klarity' ),
-		'id'            => 'second-footer-widget-area',
-		'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Right', 'klarity' ),
-		'id'            => 'third-footer-widget-area',
-		'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-}
-add_action( 'widgets_init', 'klarity_widgets_init' );
-
+add_action('widgets_init',
+  /**
+   * Register widget area.
+   *
+   * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+   */
+  function () {
+    register_sidebar( array(
+      'name'          => esc_html__( 'Footer Left', 'klarity' ),
+      'id'            => 'first-footer-widget-area',
+      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+      'name'          => esc_html__( 'Footer Center', 'klarity' ),
+      'id'            => 'second-footer-widget-area',
+      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+      'name'          => esc_html__( 'Footer Right', 'klarity' ),
+      'id'            => 'third-footer-widget-area',
+      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    ) );
+  }
+);
 
 function create_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
@@ -150,13 +148,14 @@ function create_copyright() {
 	_e( 'All rights reserved.', 'klarity' );
 }
 
-/**
- * Enqueue scripts and styles.
- */
-function klarity_scripts() {
-	wp_enqueue_style( 'klarity-style', get_stylesheet_uri(), [], time() );
+add_action('wp_enqueue_scripts',
+  /**
+   * Enqueue scripts and styles.
+   */
+  function () {
+    wp_enqueue_style( 'klarity-style', get_stylesheet_uri(), [], time() );
 
-	wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+    wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
 
     wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), false, true );
 
@@ -164,22 +163,53 @@ function klarity_scripts() {
 
     wp_enqueue_script( 'klarity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'klarity_scripts' );
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+    }
+  }
+);
 
-function add_theme_scripts() {
+add_action('enqueue_block_editor_assets',
+  function () {
     wp_enqueue_style('klarity-style', get_template_directory_uri() . '/editor.css', [], time());
-}
-add_action('enqueue_block_editor_assets', 'add_theme_scripts');
+  }
+);
 
-// Remove AddToAny this we add it ourselves later
-function addtoany_remove() {
+add_action('pre_get_posts',
+  // Remove AddToAny : we add it ourselves later
+  function() {
     remove_filter( 'the_content', 'A2A_SHARE_SAVE_add_to_content', 98 );
-}
-add_action( 'pre_get_posts', 'addtoany_remove');
+  }
+);
+
+// "Comment has been sent" section : set a cookie if a cookie is pending approval
+add_action('set_comment_cookies',
+  function($comment, $user) {
+    if (!$comment->comment_approved) {
+      setcookie( 'ta_comment_wait_approval', '1' );
+    }
+  }, 10, 2
+);
+
+// "Comment has been sent" section : if a cookie is set, add a text saying it
+add_action('init',
+  function() {
+    if(isset($_COOKIE['ta_comment_wait_approval']) && $_COOKIE['ta_comment_wait_approval'] === '1' ) {
+      setcookie( 'ta_comment_wait_approval', null, time() - 3600, '/' );
+      add_action( 'comment_form_before', function() {
+        echo '<p id="wait-approval" class="commment-wait-approval"><strong>'.__('Your comment has been sent successfully.').'</strong></p>';
+      });
+    }
+  }
+);
+
+// "Comment has been sent" section : add the anchor of the text to the URL
+add_filter( 'comment_post_redirect', function($location, $comment ) {
+  if (!$comment->comment_approved) {
+    $location = get_permalink( $comment->comment_post_ID ).'#wait-approval';
+  }
+  return $location;
+}, 10, 2 );
 
 /**
  * Implement the Custom Header feature.
