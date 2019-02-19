@@ -155,13 +155,13 @@ add_action('wp_enqueue_scripts',
   function () {
     wp_enqueue_style( 'klarity-style', get_stylesheet_uri(), [], time() );
 
-    wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+    wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), false, true );
 
     wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), false, true );
 
     wp_enqueue_script( 'klarity-init', get_template_directory_uri() . '/js/init.js', array('jquery'), time(), true );
 
-    wp_enqueue_script( 'klarity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20151215', true );
+    wp_enqueue_script( 'klarity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), false, true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
       wp_enqueue_script( 'comment-reply' );
@@ -182,34 +182,10 @@ add_action('pre_get_posts',
   }
 );
 
-// "Comment has been sent" section : set a cookie if a cookie is pending approval
-add_action('set_comment_cookies',
-  function($comment, $user) {
-    if (!$comment->comment_approved) {
-      setcookie( 'ta_comment_wait_approval', '1' );
-    }
-  }, 10, 2
-);
-
-// "Comment has been sent" section : if a cookie is set, add a text saying it
-add_action('init',
-  function() {
-    if(isset($_COOKIE['ta_comment_wait_approval']) && $_COOKIE['ta_comment_wait_approval'] === '1' ) {
-      setcookie( 'ta_comment_wait_approval', null, time() - 3600, '/' );
-      add_action( 'comment_form_before', function() {
-        echo '<p id="wait-approval" class="commment-wait-approval"><strong>'.__('Your comment has been sent successfully.').'</strong></p>';
-      });
-    }
-  }
-);
-
-// "Comment has been sent" section : add the anchor of the text to the URL
-add_filter( 'comment_post_redirect', function($location, $comment ) {
-  if (!$comment->comment_approved) {
-    $location = get_permalink( $comment->comment_post_ID ).'#wait-approval';
-  }
-  return $location;
-}, 10, 2 );
+/**
+ * "Your comment has been sent" message.
+ */
+require get_template_directory() . '/inc/comment-approval.php';
 
 /**
  * Implement the Custom Header feature.
