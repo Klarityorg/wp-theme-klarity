@@ -73,8 +73,14 @@ if (post_password_required()) {
   endif; // Check for have_comments().
   comment_form([
     'label_submit' => __('Comment'),
-    'submit_button' => '<input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
-    'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>'
+    'submit_button' => '
+      <p class="comment-notes">
+        <span id="email-notes">' . __('Your email address will not be published.') . '</span>'
+        .sprintf(' ' . __('Required fields are marked %s'), '<span class="required">*</span>')
+    .'</p>
+      <input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
+    'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x('Comment', 'noun') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>',
+    'comment_notes_before' => '',
   ]);
   ?>
 
