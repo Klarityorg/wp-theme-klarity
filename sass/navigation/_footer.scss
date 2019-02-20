@@ -22,8 +22,12 @@
 .input-field input[type=search] {
   border-bottom-color: white;
   border-radius: 0;
-  padding: 0px 16px;
+  padding-left: 8px;
   -webkit-appearance: none;
+
+  @media only screen and (max-width: 600px) {
+    width: 80%;
+  }
 
   & ~ .material-icons {
     top: 0;
