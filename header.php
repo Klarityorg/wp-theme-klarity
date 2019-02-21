@@ -35,8 +35,8 @@
                     ?>
              </ul>
 
-            <ul id="nav-mobile" class="sidenav" style="padding-top: 50px;">
-            <li><a class="sidenav-close right" href="#!"  style="width: 40px; margin-right: 10px;"><i class="material-icons">close</i></a></li>
+            <ul id="nav-mobile" class="sidenav" style="padding-top: 10px;">
+            <li><a class="sidenav-close right" href="#!"  style="width: 40px; margin-right: 35px;"><i class="material-icons">close</i></a></li>
             <li>&nbsp;</li>
             <li><a href="/">Home</a></li>
                 <?php
