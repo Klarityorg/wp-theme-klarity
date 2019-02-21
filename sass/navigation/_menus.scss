@@ -1,4 +1,13 @@
 .navbar-fixed, nav {
+	&.posts-navigation {
+		background: transparent;
+		box-shadow: none;
+
+		h2 {
+			display: none;
+		}
+	}
+
 	a {
 		font-family: lato, sans-serif;
 		font-weight: bold;
