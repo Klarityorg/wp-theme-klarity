@@ -1,3 +1,7 @@
+#primary {
+  min-height: calc(100vh - 200px);
+}
+
 .entry-content,
 .block-library-rich-text__tinymce {
   >* {
