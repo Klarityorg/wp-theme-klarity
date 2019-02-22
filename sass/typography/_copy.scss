@@ -2,6 +2,7 @@ p {
   font-family: lato, sans-serif;
   font-size: 14px;
   line-height: 24px;
+  margin:#{$block-padding} 0;
 
   @media #{$medium-and-up} {
     font-size: 18px;

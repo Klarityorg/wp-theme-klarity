@@ -27,12 +27,22 @@
   }
 
   >div, >p {
-    padding-top: #{$block-height*2};
-    padding-bottom: #{$block-height*2};
+    padding-top: #{$block-height};
+    padding-bottom: #{$block-height};
 
     @media #{$medium-and-up} {
-      padding-top: #{$block-height-medium-and-up*2};
-      padding-bottom: #{$block-height-medium-and-up*2};
+      padding-top: #{$block-height-medium-and-up};
+      padding-bottom: #{$block-height-medium-and-up};
+    }
+
+    >*:first-child,
+    >section >*:first-child {
+      margin-top: 0;
+    }
+
+    >*:last-child,
+    >section >*:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -84,7 +94,7 @@
     .post-content {
       width: 70%;
       height: 100%;
-      
+
       h3, p, a {
         padding: 0px 0px 0px 30px;
         margin: 0px;
