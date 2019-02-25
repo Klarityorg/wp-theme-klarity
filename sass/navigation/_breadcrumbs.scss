@@ -1,7 +1,30 @@
+$breadcrumbs-padding-top: 30px;
+$breadcrumbs-height: 85px;
+$breadcrumbs-padding-bottom: 30px;
+
 .breadcrumbs {
-  padding-top: 30px;
+  display: none; // Hide by default, show after page load
+  position: relative;
+  background: #{$color__background-body};
+  height: #{$breadcrumbs-height};
+  padding-top: #{$breadcrumbs-padding-top};
+  padding-bottom: #{$breadcrumbs-padding-bottom};
   text-transform: capitalize;
   z-index: 2;
-  margin-bottom: -40px;
-  position: relative;
+
+  @media #{$small-and-down} {
+    position: fixed;
+    width: 100%;
+    padding-left: 5%;
+  }
+
+  &.show-after-page-load {
+    display: block;
+
+    ~ .entry-content {
+      @media #{$small-and-down} {
+        padding-top: #{$breadcrumbs-height} !important;
+      }
+    }
+  }
 }

@@ -26,17 +26,16 @@ get_header();
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h3 class="page-title screen-reader-text"><?php single_post_title(); ?></h3>
-				</header>
-				<?php
-			endif;
-
 			?>
 			<div class="entry-content">
 			<?php
+      if ( is_home() && ! is_front_page() ) :
+        ?>
+        <header>
+          <h3 class="page-title screen-reader-text"><?php single_post_title(); ?></h3>
+        </header>
+      <?php
+      endif;
 			/* Start the Loop */
 			while ( have_posts() ) :
 

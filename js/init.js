@@ -7,10 +7,16 @@
     $('#commentform').removeAttr('novalidate');
 
     // Scroll to anchor if it exists
-    let anchor = $(':target');
-    if (anchor.length) {
-      $('html, body').prop({scrollTop: anchor.offset().top - $('.navbar-fixed').height()});
+    if ($(':target').length) {
+      $('html, body').prop({scrollTop: $(':target').offset().top - $('.navbar-fixed').height()});
     }
+
+    // Show non-empty breadcrumbs
+    $('.breadcrumbs').each(function(){
+      if($.trim($(this).text()) !== ''){
+        $(this).addClass('show-after-page-load');
+      }
+    });
 
   });
 })(jQuery);
