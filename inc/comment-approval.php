@@ -15,7 +15,7 @@ add_action('init',
     if(isset($_COOKIE['ta_comment_wait_approval']) && $_COOKIE['ta_comment_wait_approval'] === '1' ) {
       setcookie( 'ta_comment_wait_approval', null, time() - 3600, '/' );
       add_action( 'comment_form_before', function() {
-        echo '<p id="wait-approval" class="commment-wait-approval"><strong>'.__('Your comment has been sent successfully.').'</strong></p>';
+        echo '<p id="wait-approval" class="commment-wait-approval"><strong>'.__('Your comment has been sent successfully.', 'klarity').'</strong></p>';
       });
     }
   }
