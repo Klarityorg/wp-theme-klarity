@@ -8,29 +8,35 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h3 class="entry-title">', '</h3>' );
-		else :
-			the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta shade" style="text-align: center">
-				<?php
-				klarity_posted_on();
-				klarity_entry_footer();
-				klarity_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+  <?php if(function_exists('bcn_display'))
+  { ?>
+    <div class="container breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php bcn_display(); ?>
+    </div><?php
+  }?>
+  <div class="entry-content">
+    <header class="entry-header">
+      <?php
+      if ( is_singular() ) :
+        the_title( '<h3 class="entry-title">', '</h3>' );
+      else :
+        the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+      endif;
 
-	<div class="entry-content">
+      if ( 'post' === get_post_type() ) :
+        ?>
+        <div class="entry-meta shade" style="text-align: center">
+          <?php
+          klarity_posted_on();
+          klarity_entry_footer();
+          klarity_posted_by();
+          ?>
+        </div><!-- .entry-meta -->
+      <?php endif; ?>
+    </header><!-- .entry-header -->
+
 		<?php
 		the_content( sprintf(
 			wp_kses(
