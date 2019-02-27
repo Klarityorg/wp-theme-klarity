@@ -18,6 +18,7 @@ $breadcrumbs-height: 56px;
   &.show-after-page-load {
     display: flex;
     align-items: center;
+    margin-top: 5px;
 
     ~ .entry-content {
       @media #{$small-and-down} {
