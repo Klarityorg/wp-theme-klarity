@@ -25,8 +25,10 @@
 .custom-logo-link {
     display: inline-block;
     height: 100%;
-}
 
-.custom-logo-link>img {
-    vertical-align: middle
+	> img {
+		vertical-align: middle;
+		width: 104px;
+		height: 44px;
+	}
 }
