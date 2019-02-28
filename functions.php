@@ -214,3 +214,9 @@ require get_template_directory() . '/inc/scss_customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+/*
+function wpb_remove_commentsip( $comment_author_ip ) {
+	return '';
+}
+add_filter( 'pre_comment_user_ip', 'wpb_remove_commentsip' );
+*/
