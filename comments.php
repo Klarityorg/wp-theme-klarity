@@ -15,27 +15,26 @@
  * @param integer $depth
  */
 function format_comment($comment, $args, $depth) {
-$GLOBALS['comment'] = $comment; ?>
+  ?>
+  <li class="<?php echo implode(' ', [$depth === 1 ? 'card' : ''] + get_comment_class()) ?>" id="comment-<?php comment_ID() ?>">
 
-<li class="<?php echo implode(' ', [$depth === 1 ? 'card' : ''] + get_comment_class()) ?>" id="comment-<?php comment_ID() ?>">
-
-  <div class="comment-intro">
-    <div class="comment-author"><?php echo $comment->comment_author ?>
+    <div class="comment-intro">
+      <div class="comment-author"><?php echo $comment->comment_author ?>
+      </div>
+      <div class="comment-time">
+        <?php printf(_x('%s ago', '%s = human-readable time difference', 'klarity'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
+      </div>
     </div>
-    <div class="comment-time">
-      <?php printf(_x('%s ago', '%s = human-readable time difference', 'klarity'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
+
+    <?php if ($comment->comment_approved === '0') { ?>
+      <em><?php _e('Your comment is awaiting moderation.', 'klarity') ?></em><br/>
+    <?php } ?>
+
+    <?php comment_text(); ?>
+
+    <div class="reply">
+      <?php comment_reply_link(array_merge($args, ['depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
     </div>
-  </div>
-
-  <?php if ($comment->comment_approved === '0') { ?>
-    <em><?php _e('Your comment is awaiting moderation.', 'klarity') ?></em><br/>
-  <?php } ?>
-
-  <?php comment_text(); ?>
-
-  <div class="reply">
-    <?php comment_reply_link(array_merge($args, ['depth' => $depth, 'max_depth' => $args['max_depth']])) ?>
-  </div>
 
 <?php }
 

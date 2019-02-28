@@ -1,6 +1,6 @@
 {
   "name": "klarity",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "scripts": {
     "build": "node_modules/node-sass/bin/node-sass sass -o . --output-style=compressed"
   },
