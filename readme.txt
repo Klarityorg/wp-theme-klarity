@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 5.0
 Tested up to: 5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 7.0
 
 == Description ==
