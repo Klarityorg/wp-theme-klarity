@@ -24,7 +24,7 @@
     <div class="navbar-fixed">
     <nav class="primary-background" role="navigation">
         <div class="nav-wrapper container">
-            <?php echo the_custom_logo() ?>
+            <?php the_custom_logo() ?>
 
              <ul class="right hide-on-med-and-down">
                 <?php

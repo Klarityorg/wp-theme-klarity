@@ -138,14 +138,13 @@ function create_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
 	$first_post = $all_posts[0];
 	$first_date = $first_post->post_date_gmt;
-	_e( 'Copyright &copy; ', 'klarity');
-	if (strpos($first_date, date('Y')) === 0) {
-	    echo date( 'Y' );
-	} else {
-	    echo substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
-	}
-	echo ' <strong>' . get_bloginfo( 'name' ) . '</strong> ';
-	_e( 'All rights reserved.', 'klarity' );
+  esc_html_e( 'Copyright &copy; ', 'klarity');
+  $date = strpos($first_date, date('Y')) === 0
+    ? date( 'Y' )
+    : substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
+  echo esc_html($date);
+  echo esc_html('<strong>' . get_bloginfo( 'name' ) . '</strong> ');
+  esc_html_e( 'All rights reserved.', 'klarity' );
 }
 
 add_action('wp_enqueue_scripts',

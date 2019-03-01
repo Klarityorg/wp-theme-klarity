@@ -62,7 +62,7 @@
       comments_template();
     endif;
     if (function_exists('A2A_SHARE_SAVE_add_to_content')) {
-      echo A2A_SHARE_SAVE_add_to_content('');
+      echo wp_kses_post(A2A_SHARE_SAVE_add_to_content(''));
     } ?>
   </div><!-- .entry-content -->
   <footer class="entry-footer">

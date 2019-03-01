@@ -16,18 +16,18 @@
  */
 function format_comment($comment, $args, $depth) {
   ?>
-  <li class="<?php echo implode(' ', [$depth === 1 ? 'card' : ''] + get_comment_class()) ?>" id="comment-<?php comment_ID() ?>">
+  <li class="<?php echo esc_attr(implode(' ', [$depth === 1 ? 'card' : ''] + get_comment_class())) ?>" id="comment-<?php comment_ID() ?>">
 
     <div class="comment-intro">
-      <div class="comment-author"><?php echo $comment->comment_author ?>
+      <div class="comment-author"><?php echo esc_html($comment->comment_author) ?>
       </div>
       <div class="comment-time">
-        <?php printf(_x('%s ago', '%s = human-readable time difference', 'klarity'), human_time_diff(get_comment_time('U'), current_time('timestamp'))); ?>
+        <?php printf('%s ago', esc_html(human_time_diff(get_comment_time('U'), current_time('timestamp')))); ?>
       </div>
     </div>
 
     <?php if ($comment->comment_approved === '0') { ?>
-      <em><?php _e('Your comment is awaiting moderation.', 'klarity') ?></em><br/>
+      <em><?php esc_html_e('Your comment is awaiting moderation.', 'klarity') ?></em><br/>
     <?php } ?>
 
     <?php comment_text(); ?>
@@ -48,7 +48,7 @@ if (post_password_required()) {
 } ?>
 <div id="comments" class="comments-area">
   <h4 class="comments-title">
-    <?php echo __('Leave a comment', 'klarity') ?>
+    <?php esc_html_e('Leave a comment', 'klarity') ?>
   </h4><?php
   // You can start editing here -- including this comment!
   if (have_comments()) :
@@ -74,8 +74,8 @@ if (post_password_required()) {
     'label_submit' => __('Comment', 'klarity'),
     'submit_button' => '
       <p class="comment-notes">
-        <span id="email-notes">' . __('Your email address will not be published.', 'klarity') . '</span>'
-        .sprintf(' ' . __('Required fields are marked %s', 'klarity'), '<span class="required">*</span>')
+        <span id="email-notes">' . __('Your email address will not be published.', 'klarity') . '</span> '
+        .__('Required fields are marked <span class="required">*</span>', 'klarity')
     .'</p>
       <input name="%1$s" type="submit" id="%2$s" class="btn %3$s" value="%4$s" />',
     'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __('Comment', 'klarity') . ' *</label> <textarea id="comment" class="materialize-textarea" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>',
