@@ -143,7 +143,7 @@ function create_copyright() {
     ? date( 'Y' )
     : substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
   echo esc_html($date);
-  echo esc_html('<strong>' . get_bloginfo( 'name' ) . '</strong> ');
+  ?><strong> <?php echo esc_html(get_bloginfo('name'))?> </strong><?php
   esc_html_e( 'All rights reserved.', 'klarity' );
 }
 
