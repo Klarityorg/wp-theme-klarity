@@ -60,6 +60,7 @@ if (post_password_required()) {
         'callback' => 'format_comment',
         'style' => 'ol',
         'short_ping' => true,
+        'reverse_top_level' => true,
       ]);
       ?>
     </ol><!-- .comment-list -->
