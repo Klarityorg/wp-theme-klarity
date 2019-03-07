@@ -162,6 +162,12 @@ function klarity_register_required_plugins() {
 			'required'           => false,
 			'force_activation'   => false,
 		),
+		array(
+			'name'               => 'Safe SVG',
+			'slug'               => 'safe-svg',
+			'required'           => false,
+			'force_activation'   => false,
+		),
 	);
 
 	/*
