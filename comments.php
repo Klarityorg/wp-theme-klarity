@@ -14,7 +14,7 @@
  * @param array   $args
  * @param integer $depth
  */
-function format_comment($comment, $args, $depth) {
+function klarity_format_comment($comment, $args, $depth) {
   ?>
   <li class="<?php echo esc_attr(implode(' ', [$depth === 1 ? 'card' : ''] + get_comment_class())) ?>" id="comment-<?php comment_ID() ?>">
 
@@ -57,7 +57,7 @@ if (post_password_required()) {
     <ol class="comment-list">
       <?php
       wp_list_comments([
-        'callback' => 'format_comment',
+        'callback' => 'klarity_format_comment',
         'style' => 'ol',
         'short_ping' => true,
         'reverse_top_level' => true,

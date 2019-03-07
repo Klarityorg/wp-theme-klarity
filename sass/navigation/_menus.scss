@@ -18,8 +18,18 @@
 	}
 }
 
+#nav-mobile {
+	padding-top: 10px;
+}
+
+.sidenav-close {
+	width: 40px;
+	margin-right: 35px;
+}
+
 .sub-menu li {
 	background-color: $primary-color;
+	float: none;
 }
 
 .custom-logo-link {

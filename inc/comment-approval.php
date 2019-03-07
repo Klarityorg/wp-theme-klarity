@@ -1,6 +1,6 @@
 <?php
 
-// "Comment has been sent" section : set a cookie if a cookie is pending approval
+// "Comment has been sent" section : set a cookie if a comment is pending approval
 add_action('set_comment_cookies',
   function($comment, $user) {
     if (!$comment->comment_approved) {
@@ -26,7 +26,7 @@ add_action('init',
 // "Comment has been sent" section : add the anchor of the text to the URL
 add_filter( 'comment_post_redirect', function($location, $comment ) {
   if (!$comment->comment_approved) {
-    $location = get_permalink( $comment->comment_post_ID ).'#wait-approval';
+    $location = esc_url(get_permalink( $comment->comment_post_ID ).'#wait-approval');
   }
   return $location;
 }, 10, 2 );

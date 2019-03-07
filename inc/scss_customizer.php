@@ -38,40 +38,40 @@ $default_variables = [
     'tertiary-color-text' => '#000000',
 ];
 
-function prefix_set_variables() {
-    global $default_variables;
-    $variables = [];
-    // Loop through each variable and get theme_mod.
-    foreach ($default_variables as $key => $value) {
-        $variables[$key] = get_theme_mod($key, $value);
-    }
-    $variables['color__background-body'] = get_theme_mod('background_color');
-    if (preg_match('~#?(.+)$~', $variables['color__background-body'], $match)) {
-      $variables['color__background-body'] = "#{$match[1]}";
-    }
-    return $variables;
-}
-add_filter('wp_scss_variables', 'prefix_set_variables');
+add_filter('wp_scss_variables', function() {
+  global $default_variables;
+  $variables = [];
+  // Loop through each variable and get theme_mod.
+  foreach ($default_variables as $key => $value) {
+    $variables[$key] = get_theme_mod($key, $value);
+  }
+  $variables['color__background-body'] = get_theme_mod('background_color');
+  if (preg_match('~#?(.+)$~', $variables['color__background-body'], $match)) {
+    $variables['color__background-body'] = "#{$match[1]}";
+  }
+  return $variables;
+});
 
-function prefix_customizer_register() {
-    global $wp_customize;
-    global $default_variables;
-    foreach ($default_variables as $key => $value) {
-        $wp_customize->add_setting($key, [
-            'default' => $value,
-            'sanitize_callback' => 'sanitize_hex_color',
-        ]);
-        // Add control for each variable.
-        $wp_customize->add_control(
-            new WP_Customize_Color_Control(
-                $wp_customize,
-                $key,
-                [
-                    'label' => ucfirst(str_replace('-', ' ', $key)),
-                    'section' => 'colors',
-                    'settings' => $key,
-                ])
-        );
-    }
-}
+add_action('customize_register', function() {
+  global $wp_customize;
+  global $default_variables;
+  foreach ($default_variables as $key => $value) {
+    $wp_customize->add_setting($key, [
+      'default' => $value,
+      'sanitize_callback' => 'sanitize_hex_color',
+    ]);
+    // Add control for each variable.
+    $wp_customize->add_control(
+      new WP_Customize_Color_Control(
+        $wp_customize,
+        $key,
+        [
+          'label' => ucfirst(str_replace('-', ' ', $key)),
+          'section' => 'colors',
+          'settings' => $key,
+        ])
+    );
+  }
+});
+
 add_action('customize_register', 'prefix_customizer_register');

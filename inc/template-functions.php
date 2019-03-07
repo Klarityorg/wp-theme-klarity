@@ -26,23 +26,6 @@ function klarity_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'klarity_body_classes' );
 
-function mce_formats($init) {
-    $formats = [
-        'h1' => __('Heading 1', 'klarity'),
-        'h2' => __('Heading 2', 'klarity'),
-        'h3' => __('Heading 3', 'klarity'),
-        'h4' => __('Heading 4', 'klarity'),
-        'h5' => __('Sub-header', 'klarity'),
-        'p' => __('Paragraph', 'klarity')
-    ];
-    array_walk($formats, function ($key, $val) use (&$block_formats) {
-        $block_formats .= esc_attr($key) . '=' . esc_attr($val) . ';';
-    }, $block_formats = '');
-    $init['block_formats'] = $block_formats;
-    return $init;
-}
-
-add_filter('tiny_mce_before_init', 'mce_formats');
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */

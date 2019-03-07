@@ -134,7 +134,7 @@ add_action('widgets_init',
   }
 );
 
-function create_copyright() {
+function klarity_show_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
 	$first_post = $all_posts[0];
 	$first_date = $first_post->post_date_gmt;
