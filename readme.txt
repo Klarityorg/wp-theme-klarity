@@ -24,6 +24,11 @@ A open source theme created by the Klarity organization and used on klarity.org.
 = 1.0 =
 * Initial release
 
+== Screenshots ==
+1. Screenshot of blog-page
+Full URL of image in screenshot: https://images.unsplash.com/photo-1542378974-5514c513e381?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80
+Unsplash license: https://unsplash.com/license
+
 == Resources ==
 * normalize.css, © 2012-2018 Nicolas Gallagher and Jonathan Neal, MIT
 * Underscores, © 2012-2018 Automattic, Inc., GNU GPL v2 or later
