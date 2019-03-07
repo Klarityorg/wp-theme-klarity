@@ -3,7 +3,7 @@ Contributors: klarityorg
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 5.0
 Tested up to: 5.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
