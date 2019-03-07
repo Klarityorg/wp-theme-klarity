@@ -214,9 +214,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function wpb_remove_commentsip( $comment_author_ip ) {
-	return '';
-}
-add_filter( 'pre_comment_user_ip', 'wpb_remove_commentsip' );
-
 require_once get_template_directory() . '/TGMPA/auto-install-plugins.php';
