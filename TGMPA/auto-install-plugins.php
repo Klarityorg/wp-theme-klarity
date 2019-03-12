@@ -168,6 +168,14 @@ function klarity_register_required_plugins() {
 			'required'           => false,
 			'force_activation'   => false,
 		),
+		/* TODO pending publish
+		array(
+			'name'               => 'Klarity remove comments ip',
+			'slug'               => 'klarity-remove-comment-ip',
+			'required'           => false,
+			'force_activation'   => false,
+		),
+		*/
 	);
 
 	/*
