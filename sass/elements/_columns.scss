@@ -1,0 +1,18 @@
+.klarity-block-columns-override {
+	@media screen and (max-width: 781px) {
+		.wp-block-column {
+			flex-basis: 100%;
+			margin: 0px;
+		}
+	}
+  @media screen and (min-width: 782px) {
+		.wp-block-column:first-child{
+				flex-basis: 66%;
+				margin-right: 8px;
+		}
+		.wp-block-column:last-child{
+			flex-basis: 34%;
+			margin-left: 8px;
+		}
+	}
+}
