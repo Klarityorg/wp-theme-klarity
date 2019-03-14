@@ -10,8 +10,8 @@
     padding: 0 15px;
 
     @media #{$medium-and-up} {
-      padding-left: calc(50% - #{$max-width-medium-and-up/2});
-      padding-right: calc(50% - #{$max-width-medium-and-up/2});
+      padding-left: calc(43% - #{$max-width-medium-and-up/2});
+      padding-right: calc(43% - #{$max-width-medium-and-up/2});
     }
 
     &[data-url] {

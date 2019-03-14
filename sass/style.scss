@@ -36,6 +36,11 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 @import "elements/elements";
 
 /*--------------------------------------------------------------
+# Columns
+--------------------------------------------------------------*/
+@import "elements/columns";
+
+/*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
 @import "navigation/navigation";
@@ -79,3 +84,8 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 # full width layout
 --------------------------------------------------------------*/
 @import "plugins/klarity-section";
+
+/*--------------------------------------------------------------
+# vimeo wrapper behavior
+--------------------------------------------------------------*/
+@import "plugins/vimeo-wrapper";
