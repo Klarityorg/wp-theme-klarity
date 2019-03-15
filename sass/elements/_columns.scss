@@ -1,4 +1,7 @@
 .klarity-block-columns-override {
+	.wp-block-column {
+
+	}
 	@media screen and (max-width: 781px) {
 		.wp-block-column {
 			flex-basis: 100%;
@@ -10,7 +13,11 @@
 				flex-basis: 66%;
 				margin-right: 8px;
 		}
-		.wp-block-column:last-child{
+		.wp-block-column:last-child {
+			*:first-child {
+				margin-top: 0px;
+			}
+			padding: 10px;
 			flex-basis: 34%;
 			margin-left: 8px;
 		}
