@@ -1,8 +1,8 @@
 {
   "name": "klarity",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "scripts": {
-    "build": "node_modules/node-sass/bin/node-sass sass -o . --output-style=compressed"
+    "build": "node_modules/node-sass/bin/node-sass sass -o . --output-style=nested"
   },
   "dependencies": {
     "node-sass": "^4.11.0",

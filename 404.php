@@ -16,7 +16,7 @@ get_header();
       <section class="error-404 not-found">
         <div class="page-content entry-content">
           <h2 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'klarity' ); ?></h2>
-          <p><a href="/">Go Home</a></p>
+          <p><a href="/"><?php __('Go Home', 'klarity'); ?></a></p>
 
         </div><!-- .page-content -->
       </section><!-- .error-404 -->

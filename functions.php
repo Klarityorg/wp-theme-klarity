@@ -44,7 +44,7 @@ if ( ! function_exists( 'klarity_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'klarity' ),
+			'menu-1' => __( 'Primary', 'klarity' ),
 		) );
 
 		/*
@@ -105,27 +105,27 @@ add_action('widgets_init',
    */
   function () {
     register_sidebar( array(
-      'name'          => esc_html__( 'Footer Left', 'klarity' ),
+      'name'          => __( 'Footer Left', 'klarity' ),
       'id'            => 'first-footer-widget-area',
-      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'description'   => __( 'Add widgets here.', 'klarity' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="widget-title">',
       'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
-      'name'          => esc_html__( 'Footer Center', 'klarity' ),
+      'name'          => __( 'Footer Center', 'klarity' ),
       'id'            => 'second-footer-widget-area',
-      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'description'   => __( 'Add widgets here.', 'klarity' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="widget-title">',
       'after_title'   => '</h2>',
     ) );
     register_sidebar( array(
-      'name'          => esc_html__( 'Footer Right', 'klarity' ),
+      'name'          => __( 'Footer Right', 'klarity' ),
       'id'            => 'third-footer-widget-area',
-      'description'   => esc_html__( 'Add widgets here.', 'klarity' ),
+      'description'   => __( 'Add widgets here.', 'klarity' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
       'after_widget'  => '</section>',
       'before_title'  => '<h2 class="widget-title">',
@@ -138,12 +138,15 @@ function klarity_show_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
 	$first_post = $all_posts[0];
 	$first_date = $first_post->post_date_gmt;
-  esc_html_e( 'Copyright &copy; ', 'klarity');
+  __( 'Copyright &copy; ', 'klarity');
   $date = strpos($first_date, date('Y')) === 0
     ? date( 'Y' )
     : substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
   echo esc_html($date);
-  ?><strong> <?php echo esc_html(get_bloginfo('name'))?> </strong><?php
+  ?><strong><?php
+    $blogName = get_bloginfo('name');
+    echo esc_html(empty($blogName) ? '' : $blogName, 'klarity')?>
+  </strong><?php
   esc_html_e( 'All rights reserved.', 'klarity' );
 }
 
