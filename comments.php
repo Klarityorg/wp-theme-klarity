@@ -51,22 +51,30 @@ if (post_password_required()) {
     <?php esc_html_e('Leave a comment', 'klarity') ?>
   </h4><?php
   // You can start editing here -- including this comment!
-  if (have_comments()) :
-    the_comments_navigation(); ?>
+  if (have_comments()) : ?>
+    <div>
+      <ol class="comment-list">
+        <?php
+        wp_list_comments([
+          'callback' => 'klarity_format_comment',
+          'style' => 'ol',
+          'short_ping' => true,
+          'reverse_top_level' => true,
+        ]);
+        ?>
+      </ol><!-- .comment-list -->
+      <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+      <div class="comments-navigation">
+        <div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'klarity' ) ); ?></div>
+        <div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'klarity' ) ); ?></div>
+      </div>
+      <?php endif; // Check for comment navigation ?>
 
-    <ol class="comment-list">
-      <?php
-      wp_list_comments([
-        'callback' => 'klarity_format_comment',
-        'style' => 'ol',
-        'short_ping' => true,
-        'reverse_top_level' => true,
-      ]);
-      ?>
-    </ol><!-- .comment-list -->
-
+      <?php if ( ! comments_open() && get_comments_number() ) : ?>
+        <p class="no-comments"><?php _e( 'Comments are closed.' , 'klarity' ); ?></p>
+      <?php endif; ?>
+    </div>
     <?php
-    the_comments_navigation();
     if (!comments_open()) :?>
       <p class="no-comments"><?php esc_html_e('Comments are closed.', 'klarity'); ?></p><?php
     endif;
