@@ -23,4 +23,11 @@
 			margin-left: 8px;
 		}
 	}
+	// Action network overrides
+	.can_embed #logo_wrap, .can_embed div#can_main_col{
+		display: none;
+	}
+	.can_embed #can_thank_you h1 {
+		font-size: 18px
+	}
 }
