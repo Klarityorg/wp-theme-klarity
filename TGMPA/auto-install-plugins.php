@@ -94,36 +94,30 @@ function klarity_register_required_plugins() {
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		/* TODO pending publish
 		array(
 			'name'               => 'Klarity action block',
 			'slug'               => 'klarity-action-block',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		*/
-		/* TODO pending publish
 		array(
 			'name'               => 'Klarity cases overview block',
 			'slug'               => 'klarity-cases-overview-block',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		*/
 		array(
 			'name'               => 'Klarity latest posts block',
 			'slug'               => 'klarity-latest-posts-block',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		/* TODO pending publish
 		array(
 			'name'               => 'Klarity message action block',
 			'slug'               => 'klarity-message-action-block',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		*/
 		array(
 			'name'               => 'Klarity progress bar block',
 			'slug'               => 'klarity-progress-bar-block',
@@ -142,14 +136,12 @@ function klarity_register_required_plugins() {
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		/* TODO pending publish
 		array(
 			'name'               => 'Klarity section block',
 			'slug'               => 'klarity-section-block',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		*/
 		array(
 			'name'               => 'Klarity Vimeo wrapper block',
 			'slug'               => 'klarity-vimeo-wrapper-block',
@@ -168,14 +160,12 @@ function klarity_register_required_plugins() {
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		/* TODO pending publish
 		array(
 			'name'               => 'Klarity remove comments ip',
 			'slug'               => 'klarity-remove-comment-ip',
 			'required'           => false,
 			'force_activation'   => false,
 		),
-		*/
 	);
 
 	/*
