@@ -14,46 +14,46 @@ h1, .h1, h2, .h2, h3, .h3 {
 }
 
 h1, .h1 {
-	line-height: 60px;
-	font-size: 48px;
+	line-height: 35px;
+	font-size: 36px;
 
 	@media #{$medium-and-up} {
-		line-height: 80px;
-		font-size: 80px;
-	}
-}
-
-h2, .h2 {
-	line-height: 50px;
-	font-size: 40px;
-
-	@media #{$medium-and-up} {
-		line-height: 72px;
-		font-size: 64px;
-	}
-}
-
-h3, .h3 {
-	line-height: 40px;
-	font-size: 32px;
-	margin: 20px 0;
-
-	@media #{$medium-and-up} {
-		line-height: 64px;
+		line-height: 60px;
 		font-size: 56px;
 	}
 }
 
-h4, .h5 {
+h2, .h2 {
+	line-height: 35px;
+	font-size: 36px;
+
+	@media #{$medium-and-up} {
+		line-height: 50px;
+		font-size: 48px;
+	}
+}
+
+h3, .h3 {
+	line-height: 35px;
+	font-size: 36px;
+	margin: 20px 0;
+
+	@media #{$medium-and-up} {
+		line-height: 35px;
+		font-size: 36px;
+	}
+}
+
+h4, .h4 {
 	font-family: unna, sans-serif;
 	font-weight: normal;
-	line-height: 32px;
+	line-height: 28px;
 	font-size: 24px;
 	margin: 16px 0;
 
 	@media #{$medium-and-up} {
-		line-height: 48px;
-		font-size: 40px;
+		line-height: 40px;
+		font-size: 32px;
 	}
 }
 
