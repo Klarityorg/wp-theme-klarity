@@ -1,7 +1,15 @@
 .addtoany_share_save_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  margin-top: -#{$block-height} !important;
+  margin-bottom: -#{$block-height} !important;
+
+  @media #{$medium-and-up} {
+    margin-top: -#{$block-height-medium-and-up} !important;
+    margin-bottom: -#{$block-height-medium-and-up} !important;
+  }
 
   // This class should basically have the same properties as an H3 heading
   .addtoany_header {
@@ -17,8 +25,11 @@
       width: 100%;
       line-height: 64px;
       font-size: 56px;
-      margin-bottom: #{$block-height-medium-and-up/2};
     }
+  }
+  .addtoany_list {
+    margin-left: auto;
+    margin-right: 0;
   }
 
   img {
