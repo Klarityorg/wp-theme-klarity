@@ -162,7 +162,7 @@ function klarity_register_required_plugins() {
 		),
 		array(
 			'name'               => 'Klarity remove comments ip',
-			'slug'               => 'klarity-remove-comment-ip',
+			'slug'               => 'klarity-remove-comments-ip',
 			'required'           => false,
 			'force_activation'   => false,
 		),

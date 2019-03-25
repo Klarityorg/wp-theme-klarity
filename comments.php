@@ -47,9 +47,9 @@ if (post_password_required()) {
   return;
 } ?>
 <div id="comments" class="comments-area">
-  <h4 class="comments-title">
+  <h3 class="comments-title">
     <?php esc_html_e('Leave a comment', 'klarity') ?>
-  </h4><?php
+  </h3><?php
   // You can start editing here -- including this comment!
   if (have_comments()) : ?>
     <div>
