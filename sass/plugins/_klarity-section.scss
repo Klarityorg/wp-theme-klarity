@@ -38,7 +38,7 @@
   background-color: $color__background-body !important;
 
   &, * {
-    color: black;
+    color: $tertiary-color-text;
   }
   .btn {
 	   background-color: $secondary-color;
