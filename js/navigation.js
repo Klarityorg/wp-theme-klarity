@@ -107,6 +107,9 @@
 
 (function($) {
 	$(document).ready(function() {
+		$('.menu-item-has-children > a').click(function(e) {
+	    	e.preventDefault();
+		});
 		$('.nav-wrapper li > .sub-menu').parent().hover(function() {
 			var submenu = $(this).children('.sub-menu');
 			if ( $(submenu).is(':hidden') ) {
@@ -124,4 +127,3 @@
     $('.sidenav').sidenav({edge: 'right'});
   }); // end of document ready
 })(jQuery); // end of jQuery name space
-
