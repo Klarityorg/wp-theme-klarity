@@ -26,17 +26,8 @@
         <div class="nav-wrapper container">
             <?php the_custom_logo() ?>
 
-             <ul class="right hide-on-med-and-down">
-                <?php
-                    wp_nav_menu( [
-                        'theme_location' => 'menu-1',
-                        'menu_id'        => 'primary-menu',
-                    ] );
-                    ?>
-             </ul>
-
             <ul id="nav-mobile" class="sidenav">
-            <li><a class="sidenav-close right" href="#!"><i class="material-icons"><?php esc_html_e('close', 'klarity')?></i></a></li>
+            <li><a class="sidenav-close right" href="#!"><?php esc_html_e('close', 'klarity')?></a></li>
             <li>&nbsp;</li>
             <li><a href="/"><?php esc_html_e('Home', 'klarity')?></a></li>
                 <?php
@@ -46,7 +37,7 @@
                     ] );
                     ?>
             </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i class="material-icons"><?php esc_html_e('menu', 'klarity')?></i></a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><?php esc_html_e('menu', 'klarity')?></a>
         </div>
       </nav>
     </div>

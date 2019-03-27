@@ -1,3 +1,6 @@
+nav a.sidenav-trigger {
+	display: block;
+}
 .navbar-fixed, nav {
 	&.posts-navigation {
 		background: transparent;
@@ -20,11 +23,6 @@
 
 #nav-mobile {
 	padding-top: 10px;
-}
-
-.sidenav-close {
-	width: 40px;
-	margin-right: 35px;
 }
 
 .sub-menu li {
