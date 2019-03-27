@@ -26,14 +26,15 @@
         <div class="nav-wrapper container">
             <?php the_custom_logo() ?>
 
+
             <ul id="nav-mobile" class="sidenav">
-            <li><a class="sidenav-close right" href="#!"><?php esc_html_e('close', 'klarity')?></a></li>
-            <li>&nbsp;</li>
+            <li class="nav-close-list-item"><a class="sidenav-close right" href="#!"><?php esc_html_e('close', 'klarity')?></a></li>
             <li><a href="/"><?php esc_html_e('Home', 'klarity')?></a></li>
                 <?php
                     wp_nav_menu( [
                         'theme_location' => 'menu-1',
                         'menu_id'        => 'primary-menu',
+												'link_after'			=> '<div class="nav-item-after-link"></div>',
                     ] );
                     ?>
             </ul>
