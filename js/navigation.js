@@ -115,10 +115,10 @@
 			var submenuHeight = $(submenu).children().length * 30;
 			if ( $(submenu).is(':hidden') ) {
 				$(submenu).slideDown(200);
-				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200 );
+				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200, function() { $(this).height(30 + submenuHeight)} );
 			} else {
 				$(submenu).slideUp(200);
-				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200 );
+				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200, function() { $(this).height(30)} );
 			}
 		});
 		$('.nav-wrapper li > .sub-menu').hide();
