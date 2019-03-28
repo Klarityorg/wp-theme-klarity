@@ -43,6 +43,10 @@ nav a.sidenav-trigger {
 
 .sidenav{
 	background-color: $color__background-body;
+
+	@media only screen and (min-width: 1350px) {
+		width: calc(50% - #{$max-width-extra-medium-and-up/2});
+	}
 	li {
 		height: 30px;
 		border-bottom: solid;
@@ -51,7 +55,7 @@ nav a.sidenav-trigger {
 		a {
 			display: flex;
 			font-size: 18px;
-			font-family: Unna;
+			font-family: lato;
 			text-transform: none !important;
   		white-space: nowrap;
 			overflow: hidden;
@@ -61,14 +65,20 @@ nav a.sidenav-trigger {
 	.nav-close-list-item {
 		height: 68px;
 		a {
-			font-family: lato;
 			text-transform: uppercase !important;
 			font-weight: bold;
 			margin-top: 8px;
 			margin-left: 16px;
 			background-color: transparent !important;
 			color: $tertiary-color-text !important;
+
+			@media only screen and (min-width: 769px) {
+				font-size: 18px;
+				float: left !important;
+				margin-left: 0px;
+			}
 		}
+
 	}
 	li:hover {
 		a {
@@ -117,5 +127,4 @@ nav a.sidenav-trigger {
 			}
 		}
 	}
-
 }
