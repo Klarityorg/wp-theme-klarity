@@ -43,18 +43,6 @@ nav a.sidenav-trigger {
 
 .sidenav{
 	background-color: $color__background-body;
-	.nav-close-list-item {
-		height: 68px;
-		a {
-			font-family: lato;
-			text-transform: uppercase !important;
-			font-weight: bold;
-			margin-top: 8px;
-			margin-left: 16px;
-			background-color: transparent !important;
-			color: $tertiary-color-text !important;
-		}
-	}
 	li {
 		height: 30px;
 		border-bottom: solid;
@@ -65,6 +53,21 @@ nav a.sidenav-trigger {
 			font-size: 18px;
 			font-family: Unna;
 			text-transform: none !important;
+  		white-space: nowrap;
+			overflow: hidden;
+  		text-overflow: ellipsis;
+		}
+	}
+	.nav-close-list-item {
+		height: 68px;
+		a {
+			font-family: lato;
+			text-transform: uppercase !important;
+			font-weight: bold;
+			margin-top: 8px;
+			margin-left: 16px;
+			background-color: transparent !important;
+			color: $tertiary-color-text !important;
 		}
 	}
 	li:hover {
