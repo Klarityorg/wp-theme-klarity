@@ -108,11 +108,11 @@
 (function($) {
 	$(document).ready(function() {
 		$('.menu-item-has-children > a').click(function(e) {
-	    	e.preventDefault();
+			e.preventDefault();
 		});
-		$('.nav-wrapper li > .sub-menu').parent().hover(function() {
+		var hoverOrClick = function () {
 			var submenu = $(this).children('.sub-menu');
-			var submenuHeight = $(submenu).children().length * 45;
+			var submenuHeight = $(submenu).height();
 			if ( $(submenu).is(':hidden') ) {
 				$(submenu).slideDown(200);
 				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200, function() { $(this).height(45 + submenuHeight)} );
@@ -120,7 +120,8 @@
 				$(submenu).slideUp(200);
 				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200, function() { $(this).height(45)} );
 			}
-		});
+		}
+		$('.nav-wrapper li > .sub-menu').parent().hover(hoverOrClick);
 		$('.nav-wrapper li > .sub-menu').hide();
 	});
 })( jQuery );
