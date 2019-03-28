@@ -18,6 +18,9 @@ nav a.sidenav-trigger {
 		color: $color__text-menu;
 		letter-spacing: 1.1px;
 		text-transform: uppercase;
+		@media #{$medium-and-up} {
+			font-size: 18px;
+		}
 	}
 }
 
@@ -54,12 +57,15 @@ nav a.sidenav-trigger {
 		border-width: 1px;
 		a {
 			display: flex;
-			font-size: 18px;
+			font-size: 14px;
 			font-family: lato;
 			text-transform: none !important;
   		white-space: nowrap;
 			overflow: hidden;
   		text-overflow: ellipsis;
+			@media #{$medium-and-up} {
+				font-size: 18px;
+			}
 		}
 	}
 	.nav-close-list-item {
