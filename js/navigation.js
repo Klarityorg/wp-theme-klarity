@@ -112,13 +112,13 @@
 		});
 		$('.nav-wrapper li > .sub-menu').parent().hover(function() {
 			var submenu = $(this).children('.sub-menu');
-			var submenuHeight = $(submenu).children().length * 30;
+			var submenuHeight = $(submenu).children().length * 45;
 			if ( $(submenu).is(':hidden') ) {
 				$(submenu).slideDown(200);
-				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200, function() { $(this).height(30 + submenuHeight)} );
+				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200, function() { $(this).height(45 + submenuHeight)} );
 			} else {
 				$(submenu).slideUp(200);
-				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200, function() { $(this).height(30)} );
+				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200, function() { $(this).height(45)} );
 			}
 		});
 		$('.nav-wrapper li > .sub-menu').hide();

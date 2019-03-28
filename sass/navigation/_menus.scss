@@ -51,15 +51,17 @@ nav a.sidenav-trigger {
 		width: calc(50% - #{$max-width-extra-medium-and-up/2});
 	}
 	li {
-		height: 30px;
+		height: 45px;
 		border-bottom: solid;
 		border-bottom-color: #C4C4C4;
 		border-width: 1px;
 		a {
+			height: 45px;
 			display: flex;
 			font-size: 14px;
 			font-family: lato;
 			text-transform: none !important;
+			align-items: center;
   		white-space: nowrap;
 			overflow: hidden;
   		text-overflow: ellipsis;
