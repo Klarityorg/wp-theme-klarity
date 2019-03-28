@@ -112,10 +112,13 @@
 		});
 		$('.nav-wrapper li > .sub-menu').parent().hover(function() {
 			var submenu = $(this).children('.sub-menu');
+			var submenuHeight = $(submenu).children().length * 30;
 			if ( $(submenu).is(':hidden') ) {
 				$(submenu).slideDown(200);
+				$(this).animate({ "height": "+="+submenuHeight+"px" }, 200 );
 			} else {
 				$(submenu).slideUp(200);
+				$(this).animate({ "height": "-="+submenuHeight+"px" }, 200 );
 			}
 		});
 		$('.nav-wrapper li > .sub-menu').hide();
