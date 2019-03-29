@@ -24,10 +24,6 @@ nav a.sidenav-trigger {
 	}
 }
 
-#nav-mobile {
-	padding-top: 10px;
-}
-
 .sub-menu li {
 	background-color: $primary-color;
 	float: none;
@@ -71,7 +67,7 @@ nav a.sidenav-trigger {
 		}
 	}
 	.nav-close-list-item {
-		height: 68px;
+        height: 64px;
 		a {
 			text-transform: uppercase !important;
 			font-weight: bold;
@@ -83,7 +79,7 @@ nav a.sidenav-trigger {
 			@media only screen and (min-width: 769px) {
 				font-size: 18px;
 				float: left !important;
-				margin-left: 0px;
+				margin-left: 0;
 			}
 		}
 
