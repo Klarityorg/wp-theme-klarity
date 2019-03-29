@@ -107,21 +107,23 @@ nav a.sidenav-trigger {
 		}
 	}
 	.menu-item-has-children {
-			.nav-item-after-link {
-				margin-left: 5px;
-				width: 14px;
-				height: 8px;
-				margin-top: auto;
-				margin-bottom: auto;
-				background-image: url("/wp-content/themes/klarity/icons/chevron-down.svg");
-  			background-repeat: no-repeat;
-		}
-	}
-	.menu-item-has-children:hover {
 		.nav-item-after-link {
-			background-image: url("/wp-content/themes/klarity/icons/chevron-up.svg");
+			margin-left: 5px;
+			width: 14px;
+			height: 8px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background-image: url("/wp-content/themes/klarity/icons/chevron-down.svg");
+			background-repeat: no-repeat;
+		}
+
+		&.expanded {
+			.nav-item-after-link {
+				background-image: url("/wp-content/themes/klarity/icons/chevron-up.svg");
+			}
 		}
 	}
+
 	.sub-menu{
 		li {
 				background: transparent;
