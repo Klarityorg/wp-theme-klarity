@@ -83,12 +83,6 @@ function klarity_register_required_plugins() {
 			'force_activation'   => false,
 		),
 		array(
-			'name'               => 'Coming Soon Page & Maintenance Mode by SeedProd',
-			'slug'               => 'coming-soon',
-			'required'           => false,
-			'force_activation'   => false,
-		),
-		array(
 			'name'               => 'Easy Forms for MailChimp',
 			'slug'               => 'yikes-inc-easy-mailchimp-extender',
 			'required'           => false,
