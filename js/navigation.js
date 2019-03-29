@@ -39,7 +39,6 @@
 				hideSubMenu(this);
 			}
 			e.stopPropagation();
-			e.preventDefault();
 		})
 		.on('mouseleave', function() { hideSubMenu($(this));})
 		.on('mouseenter', function() { showSubMenu($(this));});
