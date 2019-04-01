@@ -143,7 +143,7 @@ function klarity_show_copyright() {
     ? date( 'Y' )
     : substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
   echo esc_html($date);
-  ?><strong><?php
+  ?>&nbsp;<strong><?php
     $blogName = get_bloginfo('name');
     echo esc_html(empty($blogName) ? '' : $blogName, 'klarity')?>
   </strong><?php
@@ -157,13 +157,13 @@ add_action('wp_enqueue_scripts',
   function () {
     wp_enqueue_style( 'klarity-style', get_stylesheet_uri(), [], time() );
 
-    wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), false, true );
+    wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), filemtime(get_template_directory() . '/js/navigation.js'), true );
 
-    wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), false, true );
+    wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), filemtime(get_template_directory() . '/node_modules/materialize-css/dist/js/materialize.min.js'), true );
 
-    wp_enqueue_script( 'klarity-init', get_template_directory_uri() . '/js/init.js', array('jquery'), time(), true );
+    wp_enqueue_script( 'klarity-init', get_template_directory_uri() . '/js/init.js', array('jquery'), filemtime(get_template_directory() . '/js/init.js'), true );
 
-    wp_enqueue_script( 'klarity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), false, true );
+    wp_enqueue_script( 'klarity-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), filemtime(get_template_directory() . '/js/skip-link-focus-fix.js'), true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
       wp_enqueue_script( 'comment-reply' );
