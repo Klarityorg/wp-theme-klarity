@@ -55,12 +55,12 @@ nav a.sidenav-trigger {
 			height: 45px;
 			display: flex;
 			font-size: 14px;
-			font-family: lato;
+			font-family: Lato, sans-serif;
 			text-transform: none !important;
 			align-items: center;
-  		white-space: nowrap;
+			white-space: nowrap;
 			overflow: hidden;
-  		text-overflow: ellipsis;
+			text-overflow: ellipsis;
 			@media #{$medium-and-up} {
 				font-size: 18px;
 			}
@@ -81,6 +81,11 @@ nav a.sidenav-trigger {
 				float: left !important;
 				margin-left: 0;
 			}
+		}
+
+		// Hide "Home" menu item
+		&~li {
+			display: none;
 		}
 
 	}
