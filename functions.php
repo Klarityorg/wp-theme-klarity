@@ -136,13 +136,18 @@ add_action('widgets_init',
 
 function klarity_show_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
-	$first_post = $all_posts[0];
-	$first_date = $first_post->post_date_gmt;
-  __( 'Copyright &copy; ', 'klarity');
-  $date = strpos($first_date, date('Y')) === 0
-    ? date( 'Y' )
-    : substr( $first_date, 0, 4 ) . '-' . date( 'Y' );
-  echo esc_html($date);
+	if (count(date( 'Y' ) === 0)) {
+	  echo esc_html(date('Y'));
+  }
+  else {
+		$first_post = $all_posts[0];
+		$first_date = $first_post->post_date_gmt;
+		__('Copyright &copy; ', 'klarity');
+		$date = strpos($first_date, date('Y')) === 0
+			? date('Y')
+			: substr($first_date, 0, 4) . '-' . date('Y');
+		echo esc_html($date);
+	}
   ?>&nbsp;<strong><?php
     $blogName = get_bloginfo('name');
     echo esc_html(empty($blogName) ? '' : $blogName, 'klarity')?>
