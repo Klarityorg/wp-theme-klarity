@@ -136,7 +136,7 @@ add_action('widgets_init',
 
 function klarity_show_copyright() {
 	$all_posts = get_posts( 'post_status=publish&order=ASC' );
-	if (count(date( 'Y' ) === 0)) {
+	if (count($all_posts) === 0) {
 	  echo esc_html(date('Y'));
   }
   else {
