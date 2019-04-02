@@ -21,7 +21,17 @@ A open source theme created by the Klarity organization and used on klarity.org.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.6 =
+* Theme review fixes
+= 1.0.5 =
+* Add TGMPA, add sidebar menu
+= 1.0.4 =
+* Update default primary color, theme review fixes
+= 1.0.3 =
+* Fix breadcrumb position, theme review fixes
+= 1.0.2 =
+* Theme checker fixes
+= 1.0.0 =
 * Initial release
 
 == Screenshots ==
@@ -32,3 +42,4 @@ Unsplash license: https://unsplash.com/license
 == Resources ==
 * normalize.css, © 2012-2018 Nicolas Gallagher and Jonathan Neal, MIT
 * Underscores, © 2012-2018 Automattic, Inc., GNU GPL v2 or later
+* Materialize, © 2018 Materialize. Code released under the MIT license.
