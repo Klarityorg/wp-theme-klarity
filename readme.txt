@@ -12,6 +12,7 @@ A open source theme created by the Klarity organization.
 
 == Description ==
 A open source theme created by the Klarity organization and used on klarity.org.
+© 2019 Klarity
 
 == Installation ==
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -23,14 +24,22 @@ A open source theme created by the Klarity organization and used on klarity.org.
 
 = 1.0.6 =
 * Theme review fixes
+
 = 1.0.5 =
-* Add TGMPA, add sidebar menu
+* Add TGMPA
+* Add sidebar menu
+
 = 1.0.4 =
-* Update default primary color, theme review fixes
+* Update default primary color
+* Theme review fixes
+
 = 1.0.3 =
-* Fix breadcrumb position, theme review fixes
+* Fix breadcrumb position
+* Theme review fixes
+
 = 1.0.2 =
 * Theme checker fixes
+
 = 1.0.0 =
 * Initial release
 
