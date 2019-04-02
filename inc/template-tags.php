@@ -12,27 +12,16 @@ if ( ! function_exists( 'klarity_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time.
 	 */
 	function klarity_posted_on() {
-		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-		// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		// 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-		// }
-
-		$time_string = sprintf( $time_string,
-			esc_attr( get_the_date( DATE_W3C ) ),
-			esc_html( get_the_date() ),
-			esc_attr( get_the_modified_date( DATE_W3C ) ),
-			esc_html( get_the_modified_date() )
-		);
-
-
-	  $posted_on = sprintf(
-	  /* translators: %s: post date. */
-		  esc_html_x( 'Posted on %s', 'post date', 'klarity' ),
-		  '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	  );
-
-	  echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
+    ?>
+    <span class="posted-on">
+      <?php esc_html_e( 'Posted on ', 'klarity'); ?>
+      <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+        <?php echo sprintf('<time class="entry-date published updated" datetime="%1$s">%2$s</time>',
+          esc_attr( get_the_date( DATE_W3C ) ),
+          esc_html( get_the_date() )
+        ); ?>
+      </a>
+    </span><?php
 	}
 endif;
 
@@ -62,12 +51,14 @@ if ( ! function_exists( 'klarity_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'klarity' ) );
 			if ( $categories_list ) {
+		  /* translators: used to list categories */
 		    printf( '<span class="cat-links">' . esc_html__( ' in %1$s', 'klarity' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'klarity' ) );
 			if ( $tags_list ) {
+		    /* translators: used to list tags */
 		    printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'klarity' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
