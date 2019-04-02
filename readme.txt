@@ -2,8 +2,8 @@
 Contributors: klarityorg
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 5.0
-Tested up to: 5.1
-Stable tag: 1.0.6
+Tested up to: 5.1.1
+Stable tag: 1.0.7
 Requires PHP: 7.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -21,6 +21,10 @@ A open source theme created by the Klarity organization and used on klarity.org.
 4. Allow editor to customize the theme by specifying customizable colors in `inc/scss_customizer.php`. These colors can be defaulted in `sass/variables-site/_colors.scss`.
 
 == Changelog ==
+
+= 1.0.7 =
+* Handle sub-menus
+* Theme review fixes
 
 = 1.0.6 =
 * Theme review fixes
