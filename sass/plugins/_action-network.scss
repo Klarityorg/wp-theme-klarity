@@ -6,13 +6,18 @@
   .can_embed #can_thank_you h1 {
     font-size: 18px
   }
+  #can_embed_form .action_status_tracker .action_status_goal { /*Remove petition status goal text*/
+    display: none;
+  }
+  #can_embed_form .action_status_tracker { /*Readjust gutters now that .action_status_goal is display:none;*/
+    padding: 0 20px 30px !important;
+  }
   .action_sidebar {
     .country_drop_wrap {
       display: block !important;
     }
-  }
 
   #can_embed_form #can_sidebar #d_sharing {
       display: none !important;
-    }
+  }
 }
