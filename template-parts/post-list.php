@@ -37,7 +37,7 @@
         </div>
         <div class="post-content">
           <div class="left-align">
-            <p class="meta-data">Created <?php echo esc_html($formated_date) ?> - <?php echo esc_html( get_the_author_meta('display_name',$post->post_author)) ?></p>
+            <p class="meta-data"><?php echo esc_html__( 'Created ', 'klarity' ).esc_html($formated_date) ?> - <?php echo esc_html( get_the_author_meta('display_name',$post->post_author)) ?></p>
           </div>
           <h3 class="left-align"><?php echo esc_html($post->post_title) ?></h3>
           <p><?php echo esc_html($content) ?></p>

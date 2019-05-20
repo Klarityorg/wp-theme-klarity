@@ -12,7 +12,10 @@ A open source theme created by the Klarity organization.
 
 == Description ==
 A open source theme created by the Klarity organization and used on klarity.org.
-© 2019 Klarity
+
+==  Copyright  ==
+klarity WordPress Theme, © 2019 Klarity
+klarity is distributed under the terms of the GNU GPL
 
 == Installation ==
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
