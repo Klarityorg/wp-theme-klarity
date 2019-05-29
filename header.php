@@ -26,8 +26,17 @@
         <div class="nav-wrapper container">
             <?php the_custom_logo() ?>
 
+            <div class="nav-menu-desktop">
+                <?php
+                wp_nav_menu( [
+                    'theme_location' => 'menu-1',
+                    'menu_id'        => 'primary-menu',
+                    'link_after'			=> '<div class="nav-item-after-link"></div>',
+                ] );
+                ?>
+            </div>
 
-            <ul id="nav-mobile" class="sidenav">
+            <ul id="nav-mobile" class="sidenav hide-on-large-only">
             <li class="nav-close-list-item"><a class="sidenav-close right" href="#!"><?php esc_html_e('close', 'klarity')?></a></li>
             <li><a href="/"><?php esc_html_e('Home', 'klarity')?></a></li>
                 <?php
@@ -38,7 +47,7 @@
                     ] );
                     ?>
             </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><?php esc_html_e('menu', 'klarity')?></a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger right hide-on-large-only"><?php esc_html_e('menu', 'klarity')?></a>
         </div>
       </nav>
     </div>

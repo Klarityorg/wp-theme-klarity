@@ -58,9 +58,9 @@
       'after' => '</div>',
     ]);
     // If comments are open or we have at least one comment, load up the comment template.
-    if (comments_open() || get_comments_number()) :
-      comments_template();
-    endif;
+//    if (comments_open() || get_comments_number()) :
+//      comments_template();
+//    endif;
     if (function_exists('A2A_SHARE_SAVE_add_to_content')) {
       echo wp_kses_post(A2A_SHARE_SAVE_add_to_content(''));
     } ?>
