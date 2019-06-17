@@ -61,8 +61,8 @@ function klarity_register_required_plugins() {
 		array(
 			'name'               => 'WP-SCSS', // The plugin name.
 			'slug'               => 'wp-scss', // The plugin slug (typically the folder name).
-			'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 		),
 		array(
 			'name'               => 'AddToAny Share Buttons',

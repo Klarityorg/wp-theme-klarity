@@ -25,15 +25,7 @@
     --------------------------------------------------------------*/
     $(document).ready(function () {
         $(document).on("click", ".tablinks", function (event) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
+            $('.tabcontent, .tablinks').removeClass('active');
             $('.' + $(this).data('id')).addClass('active');
             $(this).addClass('active')
         });
@@ -64,7 +56,7 @@
         });
 
         var data = {
-            action: 'count_all_tabs',
+            action: 'klarity_count_all_tabs',
             post_id: post_id
         };
         $.post(ajaxurl, data, function (response) {
