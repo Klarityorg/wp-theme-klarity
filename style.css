@@ -5,7 +5,7 @@ Theme URI: https://github.com/Klarityorg/wp-theme-klarity
 Author: Klarity team
 Author URI: https://github.com/Klarityorg
 Description: Klarity’s theme is designed to display videos and investigations of corruption and add targeted call-to-actions for the website visitors to mobilise citizen engagement. It’s built with modern tools and various options which allows visitors of the website to take action on displayed cases. e.g. Sign a petition, Engage in email and Whatsapp campaigns, and Whistleblow anonymously. Klarity’s theme could be used by investigate journalist networks and advocacy groups who want to grow their online presence and engage online users in creating awareness and taking action on their content. To see the theme utilised to its full potential visit jesuisanas.org.
-Version: 1.0.8
+Version: 1.1.6
 License: MIT
 License URI: LICENSE
 Text Domain: klarity
@@ -9146,7 +9146,12 @@ button a {
 ## Menus
 --------------------------------------------------------------*/
 nav a.sidenav-trigger {
-    display: block;
+    display: flex;
+    align-items: center;
+}
+
+nav a.sidenav-trigger i{
+    padding-left: 5px;
 }
 
 .navbar-fixed.posts-navigation, nav.posts-navigation {
@@ -10171,6 +10176,10 @@ h3, h4{
     display:block;
 }
 
+.outside_container .buttons_reverse .submit_button{
+    background-color: #A20404 !important;
+}
+
 /*--------------------------------------------------------------
 # Home page
 --------------------------------------------------------------*/
@@ -10220,10 +10229,24 @@ h3, h4{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    position: relative;
+}
+
+.overlay{
+    position: absolute; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0) 21%); /* background-color: rgba(0,0,0,0.3); */
+    z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
 }
 
 .container-header-bound{
     width: 100%;
+    position: inherit;
 }
 
 .inline-text{
@@ -10263,6 +10286,10 @@ h3, h4{
 
 .header-decription-2{
     margin: 40px 0;
+}
+
+.container-card-header{
+    position: inherit;
 }
 
 .card-header{
@@ -11132,6 +11159,30 @@ a.go-to-page{
     overflow: hidden;
 }
 
+.position-relative{
+    position: relative;
+}
+
+.container-tag-closed-large{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag-closed-large{
+    color: #E41414;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 5px solid #E41414;
+    padding: .5rem;
+    letter-spacing: 1rem;
+}
+
 /*--------------------------------------------------------------
 # News page
 --------------------------------------------------------------*/
@@ -11238,6 +11289,59 @@ a.go-to-page{
 .container-category-news .list-categories a:before {
     content: '> ';
 }
+
+/*--------------------------------------------------------------
+# progress bar
+--------------------------------------------------------------*/
+.container-progress{
+    padding-bottom: 10px;
+}
+
+.signature_progress_bar {
+    background-color: #dbdbdb;
+    height: 4px;
+}
+
+.signature_progress_bar > span {
+    display: block;
+    height: 4px;
+    position: relative;
+}
+
+.signature_progress_bar span.signature_progress_bar-grow {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: 4px;
+    width: 0%;
+    background-color: #25b036;
+}
+
+.container-progress p{
+    margin: 0;
+    font-size: 16px;
+}
+
+/*.grow-dot {*/
+/*    display: block;*/
+/*    height: 0;*/
+/*    width: 0;*/
+/*    background-color: #25b036;*/
+/*    border-radius: 50%;*/
+/*    position: absolute;*/
+/*    right: 0;*/
+/*    top: 0;*/
+/*}*/
+
+/*.grow-dot-flash {*/
+/*    background-color: #25b036;*/
+/*    opacity: .4;*/
+/*    border-radius: 50%;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    display: block;*/
+/*    transform: scale(2);*/
+/*}*/
 
 /*--------------------------------------------------------------
 # Footer
@@ -11390,9 +11494,9 @@ a.go-to-page{
         padding: 0 20px;
     }
 
-    .container-header-bound{
-        background: rgba(0, 0, 0, 0.5);
-    }
+    /*.container-header-bound{*/
+    /*    background: rgba(0, 0, 0, 0.5);*/
+    /*}*/
 
     .container-header-bound .wp-block-column{
         padding-top: 65px;
@@ -11655,6 +11759,11 @@ a.go-to-page{
 
     .tablinks span{
         right: 0;
+    }
+
+    .tag-closed-large{
+        font-size: 1.5rem;
+        letter-spacing: .5rem;
     }
 
     .container-news .title{

@@ -163,7 +163,8 @@ function klarity_enqueue_scripts() {
 
     wp_enqueue_script( 'klarity-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), filemtime(get_template_directory() . '/js/navigation.js'), true );
 
-    wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), filemtime(get_template_directory() . '/node_modules/materialize-css/dist/js/materialize.min.js'), true );
+    //wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/node_modules/materialize-css/dist/js/materialize.min.js', array('jquery'), filemtime(get_template_directory() . '/node_modules/materialize-css/dist/js/materialize.min.js'), true );
+    wp_enqueue_script( 'klarity-materialize', get_template_directory_uri() . '/js/materialize.min.js', array('jquery'), filemtime(get_template_directory() . '/js/materialize.min.js'), true );
 
     wp_enqueue_script( 'klarity-init', get_template_directory_uri() . '/js/init.js', array('jquery'), filemtime(get_template_directory() . '/js/init.js'), true );
 
@@ -223,6 +224,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 require_once get_template_directory() . '/TGMPA/auto-install-plugins.php';
 
+function klarity_mytheme_setup_options ()
+{
+    //doing a thing...
+    if (version_compare(PHP_VERSION, '7.0.0') < 0) {
+        $msg1 = esc_html__('Warning: Your current PHP version ', 'klarity');
+        $msg2 = esc_html__(' is lower than 7.0, which is not suitable for Klarity theme', 'klarity');
+        echo "<script type='text/javascript'>alert('". $msg1. PHP_VERSION . $msg2. "');</script>";
+    }
+}
+add_action('after_switch_theme', 'klarity_mytheme_setup_options');
 
 /*--------------------------------------------------------------
 # Custom code new design 2019/05/10
@@ -239,6 +250,11 @@ const ACTION_STATUS_CLOSED = "closed";
 const ACTION_TYPE_EMAIL = "email";
 const ACTION_TYPE_PETITION = "petition";
 
+//definied action network api key in wp-config, use document for implement this
+if (!defined('ACTION_NETWORK_API_KEY')) {
+    define( 'ACTION_NETWORK_API_KEY', '' );
+}
+
 //add font awesome
 add_action( 'wp_enqueue_scripts', 'klarity_enqueue_load_fa' );
 function klarity_enqueue_load_fa() {
@@ -252,6 +268,7 @@ function klarity_all_cases_shortcode(){
     $args = array(
         'post_type'      => 'page',
         'posts_per_page' => -1,
+        'post_status' => 'publish',
         'post_parent'    => $frontpage_id,
         'order'          => 'ASC',
         'orderby'        => 'menu_order'
@@ -259,6 +276,7 @@ function klarity_all_cases_shortcode(){
 
     $cases_children = new WP_Query( $args );
     $content = "";
+    $readmore = esc_html__( 'Read more', 'klarity' );
     if ( $cases_children->have_posts() ){
         while ( $cases_children->have_posts() ) {
             $cases_children->the_post();
@@ -286,7 +304,7 @@ function klarity_all_cases_shortcode(){
                     <p class="num-of-case">$case_num</p>
                     <h2>$title</h2>
                     <p class="short-description-case">$short_description</p>
-                    <p class="case-read-more"><a href="$link">Read more →</a></p>
+                    <p class="case-read-more"><a href="$link">$readmore →</a></p>
                 </div>        
             </div>
             <div class="line-all-cases"><hr></div>            
@@ -349,23 +367,50 @@ function klarity_mo_remove_default_comment_field( $fields ) {
 //short code for all case
 add_shortcode( 'explore_more_cases', 'klarity_explore_more_cases_shortcode' );
 function klarity_explore_more_cases_shortcode($attrs = array()){
-    if(isset($attrs['title'])){
-        $page = get_page_by_title($attrs['title']);
-        $title  = get_the_title($page->ID);
-        $thumbnail = get_the_post_thumbnail($page->ID, 'medium');
-        $link = get_permalink($page->ID);
-        $result = <<<EOT
+//    if(isset($attrs['title'])){
+//        $page = get_page_by_title($attrs['title']);
+//        $title  = get_the_title($page->ID);
+//        $thumbnail = get_the_post_thumbnail($page->ID, 'medium');
+//        $link = get_permalink($page->ID);
+    global $post;
+    $frontpage_id = get_option( 'page_on_front' );
+    $args = array(
+        'post_type'      => 'page',
+        'posts_per_page' => -1,
+        'post_status' => 'publish',
+        'post_parent'    => $frontpage_id,
+        'order'          => 'ASC',
+        'post__not_in' => array( $post->ID ),
+        'orderby'        => 'menu_order'
+    );
+
+    $cases_children = new WP_Query( $args );
+    if ( $cases_children->have_posts() ){
+        while ( $cases_children->have_posts() ) {
+            $cases_children->the_post();
+            //exclude impact
+            if (count(get_post_meta(get_the_ID(), 'case_status')) === 0) {
+                continue;
+            }
+            $thumbnail = get_the_post_thumbnail(null, 'medium');
+            $title = get_the_title();
+            $link = get_permalink();
+            $readmore = esc_html__( 'Read more', 'klarity' );
+            $explore_more_case = esc_html__( 'Explore more cases', 'klarity' );
+
+            $result = <<<EOT
             <div class="container-explore-case">
                 <div class="explore-case-thumbnail">$thumbnail</div>
                 <div class="explore-case-content">
-                    <p class="explore-case-description">Explore more cases</p>
+                    <p class="explore-case-description">$explore_more_case</p>
                     <h3 class="explore-case-title">$title</h3>
-                    <p class="explore-case-readmore"><a href="$link">Read more</a></p>
+                    <p class="explore-case-readmore"><a href="$link">$readmore</a></p>
                 </div>
             </div>
 EOT;
-        wp_reset_postdata();
-        return $result;
+            wp_reset_postdata();
+            return $result;
+        }
     }
 }
 
@@ -884,7 +929,12 @@ function klarity_get_signature_api_shortcode($attrs = array()){
                     };
                     $.post('$url_ajax', data, function (response) {
                         let result = JSON.parse(response);
-                        $('.signature').text(result['total_records'] + " $signatures_text");
+                        if(typeof result.error !== "undefined"){
+                            $('.signature').text("0 $signatures_text");                        
+                        }
+                        else{
+                            $('.signature').text(result['total_records'] + " $signatures_text");                            
+                        }
                         let percent = (result['total_records']/(result['total_pages'] * result['per_page'])) * 100;
                         $('.percent_signature').css("width", percent + '%');
                     });
