@@ -47,7 +47,7 @@
                     ] );
                     ?>
             </ul>
-            <a href="#" data-target="nav-mobile" class="sidenav-trigger right hide-on-large-only"><?php esc_html_e('menu', 'klarity')?></a>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger right hide-on-large-only"><?php esc_html_e('menu', 'klarity')?><i class="fas fa-bars"></i></a>
         </div>
       </nav>
     </div>

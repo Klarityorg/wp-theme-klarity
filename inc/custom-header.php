@@ -49,7 +49,6 @@ if ( ! function_exists( 'klarity_header_style' ) ) :
 		?>
 		<style type="text/css">
 		<?php
-		// Has the text been hidden?
 		if ( ! display_header_text() ) :
 			?>
 			.site-title,
@@ -58,7 +57,6 @@ if ( ! function_exists( 'klarity_header_style' ) ) :
 				clip: rect(1px, 1px, 1px, 1px);
 			}
 		<?php
-		// If the user has set a custom color for the text use that.
 		else :
 			?>
 			.site-title a,

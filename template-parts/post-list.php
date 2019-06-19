@@ -14,7 +14,7 @@
     $content = wp_trim_words($post->post_content, $num_words = 100 );
     $formated_date = get_the_date( get_option( 'date_format' ), $post);
     preg_match('/videoThumbnail":"(.+)"/', $post->post_content, $matches);
-    if (!is_null($matches[1])) {
+    if (isset($matches[1]) && !is_null($matches[1])) {
 		  $image = $matches[1];
     }
     else {
@@ -37,12 +37,12 @@
         </div>
         <div class="post-content">
           <div class="left-align">
-            <p class="meta-data"><?php echo esc_html__( 'Created ', 'klarity' ).esc_html($formated_date) ?> - <?php echo esc_html( get_the_author_meta('display_name',$post->post_author)) ?></p>
+            <p class="meta-data"><?php echo esc_html__('Created', 'klarity') ?> <?php echo esc_html($formated_date) ?> - <?php echo esc_html( get_the_author_meta('display_name',$post->post_author)) ?></p>
           </div>
           <h3 class="left-align"><?php echo esc_html($post->post_title) ?></h3>
           <p><?php echo esc_html($content) ?></p>
           <div class="action">
-            <p>Read more</p>
+            <p><?php echo esc_html__('Read more', 'klarity') ?></p>
           </div>
         </div>
       </div>

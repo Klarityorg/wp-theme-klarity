@@ -12,10 +12,7 @@ A open source theme created by the Klarity organization.
 
 == Description ==
 A open source theme created by the Klarity organization and used on klarity.org.
-
-==  Copyright  ==
-klarity WordPress Theme, © 2019 Klarity
-klarity is distributed under the terms of the GNU GPL
+© 2019 Klarity
 
 == Installation ==
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -59,3 +56,4 @@ Stocksnap license: Creative Commons CC0 license (https://stocksnap.io/license)
 * normalize.css, © 2012-2018 Nicolas Gallagher and Jonathan Neal, MIT
 * Underscores, © 2012-2018 Automattic, Inc., GNU GPL v2 or later
 * Materialize, © 2018 Materialize. Code released under the MIT license.
+* all.css, © fontawesome - https://fontawesome.com. License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
